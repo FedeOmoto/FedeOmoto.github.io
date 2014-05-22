@@ -8546,7 +8546,7 @@ I.$lazy($,"_attributeValidators","or","NJ",function(){return P.Fl(null,null)})
 I.$lazy($,"_hitTestCanvas","cV","fh",function(){return W.Er(1,1)})
 I.$lazy($,"_hitTestContext","mr","nB",function(){return J.uP($.fh())})
 I.$lazy($,"_beginCmd","Tr","U1",function(){return new L.Y5(C.bW,[],!0)})
-I.$lazy($,"_fillCmd","G3","iU",function(){return new L.Y5(C.H6,[],!1)})
+I.$lazy($,"_fillCmd","G3","iU",function(){return new L.Y5(C.H6,["nonzero"],!1)})
 I.$lazy($,"_strokeCmd","vY","SJ",function(){return new L.Y5(C.RR,[],!1)})
 I.$lazy($,"_workingContext","FJ","Bm",function(){return J.uP(W.Er(1,1))})
 
