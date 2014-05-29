@@ -45,10 +45,300 @@ void layout(Event event) {
   });
 }
 
+Demo lineDemo() {
+  String sourceCode =
+      '''// lineTo();
+new easel.Graphics()
+    ..beginStroke('rgba(255,255,255,1)')
+    ..moveTo(5.0, 35.0)
+    ..lineTo(110.0, 75.0)
+    ..endStroke();''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginStroke(STROKE_COLOR)
+        ..moveTo(5.0, 35.0)
+        ..lineTo(110.0, 75.0)
+        ..endStroke());
+  };
+
+  return new Demo('lineTo();', sourceCode, code);
+}
+
+Demo arcDemo() {
+  String sourceCode =
+      '''// arcTo();
+new easel.Graphics()
+    ..beginStroke('rgba(255,255,255,1)')
+    ..moveTo(50.0, 20.0)
+    ..arcTo(150.0, 20.0, 150.0, 70.0, 50.0)
+    ..endStroke();''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginStroke(STROKE_COLOR)
+        ..moveTo(50.0, 20.0)
+        ..arcTo(150.0, 20.0, 150.0, 70.0, 50.0)
+        ..endStroke());
+  };
+
+  return new Demo('arcTo();', sourceCode, code);
+}
+
+Demo quadraticCurveDemo() {
+  String sourceCode =
+      '''// quadraticCurveTo();
+new easel.Graphics()
+    ..beginStroke('rgba(255,255,255,1)')
+    ..moveTo(0.0, 25.0)
+    ..quadraticCurveTo(45.0, 50.0, 35.0, 25.0)
+    ..endStroke();''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginStroke(STROKE_COLOR)
+        ..moveTo(0.0, 25.0)
+        ..quadraticCurveTo(45.0, 50.0, 35.0, 25.0)
+        ..endStroke());
+  };
+
+  return new Demo('quadraticCurveTo();', sourceCode, code);
+}
+
+Demo bezierCurveDemo() {
+  String sourceCode =
+      '''// bezierCurveTo();
+new easel.Graphics()
+    ..beginStroke('rgba(255,255,255,1)')
+    ..moveTo(5.0, 75.0)
+    ..bezierCurveTo(4.05, 90.0, 75.0, 75.0, -25.0, -25.0)
+    ..endStroke();''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginStroke(STROKE_COLOR)
+        ..moveTo(5.0, 75.0)
+        ..bezierCurveTo(45.0, 90.0, 75.0, 75.0, -25.0, -25.0)
+        ..endStroke());
+  };
+
+  return new Demo('bezierCurveTo();', sourceCode, code);
+}
+
+Demo linearGradientStrokeDemo() {
+  String sourceCode =
+      '''// beginLinearGradientStroke();
+new easel.Graphics()
+    ..beginLinearGradientStroke(&lt;String&gt;['rgba(255,255,255,1)',
+        'rgba(50, 50, 50, 1)'], &lt;double&gt;[0.0, 0.4], 0.0, 0.0, 70.0, 140.0)
+    ..moveTo(5.0, 25.0)
+    ..lineTo(110.0, 25.0)
+    ..endStroke();''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginLinearGradientStroke(<String>[STROKE_COLOR,
+            'rgba(50, 50, 50, 1)'], <double>[0.0, 0.4], 0.0, 0.0, 70.0, 140.0)
+        ..moveTo(5.0, 25.0)
+        ..lineTo(110.0, 25.0)
+        ..endStroke());
+  };
+
+  return new Demo('beginLinearGradientStroke();', sourceCode, code);
+}
+
+Demo rectDemo() {
+  String sourceCode =
+      '''// drawRect();
+new easel.Graphics()
+    ..beginFill('rgba(255,255,255,1)')
+    ..rect(5.0, 5.0, 80, 80);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginFill(FILL_COLOR)
+        ..rect(5.0, 5.0, 80, 80));
+  };
+
+  return new Demo('drawRect();', sourceCode, code);
+}
+
+Demo roundRectDemo() {
+  String sourceCode =
+      '''// drawRoundRect();
+new easel.Graphics()
+    ..beginFill('rgba(255,255,255,1)')
+    ..drawRoundRect(0.0, 0.0, 120, 120, 5.0);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginFill(FILL_COLOR)
+        ..drawRoundRect(0.0, 0.0, 120, 120, 5.0));
+  };
+
+  return new Demo('drawRoundRect();', sourceCode, code);
+}
+
+Demo linearGradientFillWithRoundRectDemo() {
+  String sourceCode =
+      '''// beginLinearGradientFill() with drawRoundRect();
+new easel.Graphics()
+    ..beginLinearGradientFill(&lt;String&gt;['rgba(255,255,255,1)', 'rgba(0,0,0,1)'],
+        &lt;double&gt;[0.0, 1.0], 0.0, 0.0, 0.0, 130.0)
+    ..drawRoundRect(0.0, 0.0, 120, 120, 5.0);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginLinearGradientFill(<String>[FILL_COLOR, 'rgba(0,0,0,1)'],
+            <double>[0.0, 1.0], 0.0, 0.0, 0.0, 130.0)
+        ..drawRoundRect(0.0, 0.0, 120, 120, 5.0));
+  };
+
+  return new Demo('beginLinearGradientFill() with drawRoundRect();', sourceCode,
+      code);
+}
+
+Demo circleDemo() {
+  String sourceCode =
+      '''// drawCircle();
+new easel.Graphics()
+    ..beginFill('rgba(255,255,255,1)')
+    ..drawCircle(40.0, 40.0, 40.0);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginFill(FILL_COLOR)
+        ..drawCircle(40.0, 40.0, 40.0));
+  };
+
+  return new Demo('drawCircle();', sourceCode, code);
+}
+
+Demo radialGradientFillWithCircleDemo() {
+  String sourceCode =
+      '''// beginRadialGradientFill() with drawCircle();
+new easel.Graphics()
+    ..beginRadialGradientFill(&lt;String&gt;['rgba(255,255,255,1)', 'rgba(0,0,0,1)'],
+        &lt;double&gt;[0.0, 1.0], 0.0, 0.0, 0.0, 0.0, 0.0, 60.0)
+    ..drawCircle(40.0, 40.0, 40.0);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginRadialGradientFill(<String>[FILL_COLOR, 'rgba(0,0,0,1)'],
+            <double>[0.0, 1.0], 0.0, 0.0, 0.0, 0.0, 0.0, 60.0)
+        ..drawCircle(40.0, 40.0, 40.0));
+  };
+
+  return new Demo('beginRadialGradientFill() with drawCircle();', sourceCode,
+      code);
+}
+
+Demo ellipseDemo() {
+  String sourceCode =
+      '''// drawEllipse();
+new easel.Graphics()
+    ..beginFill('rgba(255,255,255,1)')
+    ..drawEllipse(5.0, 5.0, 60, 120);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginFill(FILL_COLOR)
+        ..drawEllipse(5.0, 5.0, 60, 120));
+  };
+
+  return new Demo('drawEllipse();', sourceCode, code);
+}
+
+Demo hexagonDemo() {
+  String sourceCode =
+      '''// Draw Hexagon using drawPolyStar();
+new easel.Graphics()
+    ..beginFill('rgba(255,255,255,1)')
+    ..drawPolyStar(60.0, 60.0, 60.0, 6, 0.0, 45.0);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginFill(FILL_COLOR)
+        ..drawPolyStar(60.0, 60.0, 60.0, 6, 0.0, 45.0));
+  };
+
+  return new Demo('Draw Hexagon using drawPolyStar();', sourceCode, code);
+}
+
+Demo starDemo() {
+  String sourceCode =
+      '''// Draw a star using drawPolyStar();
+new easel.Graphics()
+    ..beginFill('rgba(255,255,255,1)')
+    ..drawPolyStar(80.0, 80.0, 70.0, 5, 0.6, -90.0);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginFill(FILL_COLOR)
+        ..drawPolyStar(80.0, 80.0, 70.0, 5, 0.6, -90.0));
+  };
+
+  return new Demo('Draw a star using drawPolyStar();', sourceCode, code);
+}
+
+Demo bitmapStrokeWithRectDemo() {
+  String sourceCode =
+      '''// beginBitmapStroke() with drawRect();
+new easel.Graphics()
+    ..setStrokeStyle(25)
+    ..beginBitmapStroke(img)
+    ..rect(5.0, 5.0, 100, 100);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..setStrokeStyle(25)
+        ..beginBitmapStroke(img)
+        ..rect(5.0, 5.0, 100, 100));
+  };
+
+  return new Demo('beginBitmapStroke() with drawRect();', sourceCode, code);
+}
+
+Demo roundRectComplexDemo() {
+  String sourceCode =
+      '''// drawRoundRectComplex();
+new easel.Graphics()
+    ..beginFill('rgba(255,255,255,1)')
+    ..drawRoundRectComplex(5.0, 5.0, 70, 70, 5.0, 10.0, 15.0, 25.0);''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginFill(FILL_COLOR)
+        ..drawRoundRectComplex(5.0, 5.0, 70, 70, 5.0, 10.0, 15.0, 25.0));
+  };
+
+  return new Demo('drawRoundRectComplex();', sourceCode, code);
+}
+
+Demo circleWithBitmapFillDemo() {
+  String sourceCode =
+      '''// drawCircle(); with beginBitmapFill();
+new easel.Graphics()
+    ..beginStroke('rgba(255,255,255,1)')
+    ..beginBitmapFill(img)
+    ..drawCircle(30.0, 30.0, 30.0)
+    ..endStroke();''';
+
+  DemoCode code = (easel.Stage stage) {
+    return new easel.Shape(new easel.Graphics()
+        ..beginStroke(STROKE_COLOR)
+        ..beginBitmapFill(img)
+        ..drawCircle(30.0, 30.0, 30.0)
+        ..endStroke());
+  };
+
+  return new Demo('drawCircle(); with beginBitmapFill();', sourceCode, code);
+}
+
 Demo textDemo() {
   String sourceCode =
       '''// Text
-Text text = new Text('Hello CreateDart!', '15px Arial', '#FFF');
+easel.Text text = new easel.Text('Hello CreateDart!', '15px Arial', '#FFF');
 text.y = 45.0;
 stage.addChild(text);''';
 
@@ -135,10 +425,10 @@ stage.addChild(sprite);''';
 Demo blurFilterDemo() {
   String sourceCode =
       '''// Blur Filter
-BlurFilter blurFilter = new BlurFilter(5.0, 2.0, 2);
+easel.BlurFilter blurFilter = new easel.BlurFilter(5.0, 2.0, 2);
 Rectangle&lt;double&gt; margins = blurFilter.getBounds;
-Bitmap image = new Bitmap(img);
-image.filters = &lt;Filter&gt;[blurFilter];
+easel.Bitmap image = new easel.Bitmap(img);
+image.filters = &lt;easel.Filter&gt;[blurFilter];
 // filters are only displayed when the display object is cached
 // later, you can call updateCache() to update changes to your filters
 image.cache(margins.left, margins.top, img.width + margins.width.toInt(),
@@ -164,9 +454,9 @@ stage.addChild(image);''';
 Demo colorFilterDemo() {
   String sourceCode =
       '''// Remove Red Color Filter
-ColorFilter removeRedFilter = new ColorFilter(redMultiplier: 0.0);
-Bitmap image = new Bitmap(img);
-image.filters = &lt;Filter&gt;[removeRedFilter];
+easel.ColorFilter removeRedFilter = new easel.ColorFilter(redMultiplier: 0.0);
+easel.Bitmap image = new easel.Bitmap(img);
+image.filters = &lt;easel.Filter&gt;[removeRedFilter];
 image.cache(0.0, 0.0, img.width, img.height);
 stage.addChild(image);''';
 
@@ -186,16 +476,16 @@ stage.addChild(image);''';
 Demo colorMatrixFilterDemo() {
   String sourceCode =
       '''// ColorMatrixFilter
-ColorMatrix matrix = new ColorMatrix();
+easel.ColorMatrix matrix = new easel.ColorMatrix();
 matrix.values = &lt;double&gt;[0.33, 0.33, 0.33, 0.0, 0.0, // red
   0.33, 0.33, 0.33, 0.0, 0.0, // green
   0.33, 0.33, 0.33, 0.0, 0.0, // blue
   0.0, 0.0, 0.0, 1.0, 0.0, // alpha
   0.0, 0.0, 0.0, 0.0, 1.0];
-ColorMatrixFilter greyScaleFilter = new ColorMatrixFilter(matrix);
+easel.ColorMatrixFilter greyScaleFilter = new easel.ColorMatrixFilter(matrix);
 
-Bitmap image = new Bitmap(img);
-image.filters = &lt;Filter&gt;[greyScaleFilter];
+easel.Bitmap image = new easel.Bitmap(img);
+image.filters = &lt;easel.Filter&gt;[greyScaleFilter];
 image.cache(0.0, 0.0, img.width, img.height);
 stage.addChild(image);''';
 
@@ -291,182 +581,11 @@ void main() {
 
   canvasHolder = querySelector('.canvasHolder');
 
-  demos = <Demo>[new Demo('lineTo();',
-      '''// lineTo();
-new Graphics()
-    ..beginStroke('rgba(255,255,255,1)')
-    ..moveTo(5.0, 35.0)
-    ..lineTo(110.0, 75.0)
-    ..endStroke();''',
-      (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginStroke(STROKE_COLOR)
-          ..moveTo(5.0, 35.0)
-          ..lineTo(110.0, 75.0)
-          ..endStroke());
-    }), new Demo('arcTo();',
-        '''// arcTo();
-new Graphics()
-    ..beginStroke('rgba(255,255,255,1)')
-    ..moveTo(50.0, 20.0)
-    ..arcTo(150.0, 20.0, 150.0, 70.0, 50.0)
-    ..endStroke();''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginStroke(STROKE_COLOR)
-          ..moveTo(50.0, 20.0)
-          ..arcTo(150.0, 20.0, 150.0, 70.0, 50.0)
-          ..endStroke());
-    }), new Demo('quadraticCurveTo();',
-        '''// quadraticCurveTo();
-new Graphics()
-    ..beginStroke('rgba(255,255,255,1)')
-    ..moveTo(0.0, 25.0)
-    ..quadraticCurveTo(45.0, 50.0, 35.0, 25.0)
-    ..endStroke();''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginStroke(STROKE_COLOR)
-          ..moveTo(0.0, 25.0)
-          ..quadraticCurveTo(45.0, 50.0, 35.0, 25.0)
-          ..endStroke());
-    }), new Demo('bezierCurveTo();',
-        '''// bezierCurveTo();
-new Graphics()
-    ..beginStroke('rgba(255,255,255,1)')
-    ..moveTo(5.0, 75.0)
-    ..bezierCurveTo(4.05, 90.0, 75.0, 75.0, -25.0, -25.0)
-    ..endStroke();''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginStroke(STROKE_COLOR)
-          ..moveTo(5.0, 75.0)
-          ..bezierCurveTo(45.0, 90.0, 75.0, 75.0, -25.0, -25.0)
-          ..endStroke());
-    }), new Demo('beginLinearGradientStroke();',
-        '''// beginLinearGradientStroke();
-new Graphics()
-    ..beginLinearGradientStroke(['rgba(255,255,255,1)',
-        'rgba(50, 50, 50, 1)'], [0.0, 0.4], 0.0, 0.0, 70.0, 140.0)
-    ..moveTo(5.0, 25.0)
-    ..lineTo(110.0, 25.0)
-    ..endStroke();''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginLinearGradientStroke(<String>[STROKE_COLOR,
-              'rgba(50, 50, 50, 1)'], <double>[0.0, 0.4], 0.0, 0.0, 70.0, 140.0)
-          ..moveTo(5.0, 25.0)
-          ..lineTo(110.0, 25.0)
-          ..endStroke());
-    }), new Demo('drawRect();',
-        '''// drawRect();
-new Graphics()
-    ..beginFill('rgba(255,255,255,1)')
-    ..rect(5.0, 5.0, 80, 80);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginFill(FILL_COLOR)
-          ..rect(5.0, 5.0, 80, 80));
-    }), new Demo('drawRoundRect();',
-        '''// drawRoundRect();
-new Graphics()
-    ..beginFill('rgba(255,255,255,1)')
-    ..drawRoundRect(0.0, 0.0, 120, 120, 5.0);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginFill(FILL_COLOR)
-          ..drawRoundRect(0.0, 0.0, 120, 120, 5.0));
-    }), new Demo('beginLinearGradientFill() with drawRoundRect();',
-        '''// beginLinearGradientFill() with drawRoundRect();
-new Graphics()
-    ..beginLinearGradientFill(&lt;String&gt;['rgba(255,255,255,1)', 'rgba(0,0,0,1)'],
-        &lt;double&gt;[0.0, 1.0], 0.0, 0.0, 0.0, 130.0)
-    ..drawRoundRect(0.0, 0.0, 120, 120, 5.0);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginLinearGradientFill(<String>[FILL_COLOR, 'rgba(0,0,0,1)'],
-              <double>[0.0, 1.0], 0.0, 0.0, 0.0, 130.0)
-          ..drawRoundRect(0.0, 0.0, 120, 120, 5.0));
-    }), new Demo('drawCircle();',
-        '''// drawCircle();
-new Graphics()
-    ..beginFill('rgba(255,255,255,1)')
-    ..drawCircle(40.0, 40.0, 40.0);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginFill(FILL_COLOR)
-          ..drawCircle(40.0, 40.0, 40.0));
-    }), new Demo('beginRadialGradientFill() with drawCircle();',
-        '''// beginRadialGradientFill() with drawCircle();
-new Graphics()
-    ..beginRadialGradientFill(&lt;String&gt;['rgba(255,255,255,1)', 'rgba(0,0,0,1)'],
-        &lt;double&gt;[0.0, 1.0], 0.0, 0.0, 0.0, 0.0, 0.0, 60.0)
-    ..drawCircle(40.0, 40.0, 40.0);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginRadialGradientFill(<String>[FILL_COLOR, 'rgba(0,0,0,1)'],
-              <double>[0.0, 1.0], 0.0, 0.0, 0.0, 0.0, 0.0, 60.0)
-          ..drawCircle(40.0, 40.0, 40.0));
-    }), new Demo('drawEllipse();',
-        '''// drawEllipse();
-new Graphics()
-    ..beginFill('rgba(255,255,255,1)')
-    ..drawEllipse(5.0, 5.0, 60, 120);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginFill(FILL_COLOR)
-          ..drawEllipse(5.0, 5.0, 60, 120));
-    }), new Demo('Draw Hexagon using drawPolyStar();',
-        '''// Draw Hexagon using drawPolyStar();
-new Graphics()
-    ..beginFill('rgba(255,255,255,1)')
-    ..drawPolyStar(60.0, 60.0, 60.0, 6, 0.0, 45.0);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginFill(FILL_COLOR)
-          ..drawPolyStar(60.0, 60.0, 60.0, 6, 0.0, 45.0));
-    }), new Demo('Draw a star using drawPolyStar();',
-        '''// Draw a star using drawPolyStar();
-new Graphics()
-    ..beginFill('rgba(255,255,255,1)')
-    ..drawPolyStar(80.0, 80.0, 70.0, 5, 0.6, -90.0);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginFill(FILL_COLOR)
-          ..drawPolyStar(80.0, 80.0, 70.0, 5, 0.6, -90.0));
-    }), new Demo('beginBitmapStroke() with drawRect();',
-        '''// beginBitmapStroke() with drawRect();
-new Graphics()
-    ..setStrokeStyle(25)
-    ..beginBitmapStroke(img)
-    ..rect(5.0, 5.0, 100, 100);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..setStrokeStyle(25)
-          ..beginBitmapStroke(img)
-          ..rect(5.0, 5.0, 100, 100));
-    }), new Demo('drawRoundRectComplex();',
-        '''// drawRoundRectComplex();
-new Graphics()
-    ..beginFill('rgba(255,255,255,1)')
-    ..drawRoundRectComplex(5.0, 5.0, 70, 70, 5.0, 10.0, 15.0, 25.0);''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginFill(FILL_COLOR)
-          ..drawRoundRectComplex(5.0, 5.0, 70, 70, 5.0, 10.0, 15.0, 25.0));
-    }), new Demo('drawCircle(); with beginBitmapFill();',
-        '''// drawCircle(); with beginBitmapFill();
-new Graphics()
-    ..beginStroke('rgba(255,255,255,1)')
-    ..beginBitmapFill(img)
-    ..drawCircle(30.0, 30.0, 30.0)
-    ..endStroke();''',
-        (easel.Stage stage) {
-      return new easel.Shape(new easel.Graphics()
-          ..beginStroke(STROKE_COLOR)
-          ..beginBitmapFill(img)
-          ..drawCircle(30.0, 30.0, 30.0)
-          ..endStroke());
-    }), textDemo(), spriteDemo(), blurFilterDemo(), colorFilterDemo(),
-        colorMatrixFilterDemo(), mouseDemo(), maskDemo()];
+  demos = <Demo>[lineDemo(), arcDemo(), quadraticCurveDemo(), bezierCurveDemo(),
+      linearGradientStrokeDemo(), rectDemo(), roundRectDemo(),
+      linearGradientFillWithRoundRectDemo(), circleDemo(),
+      radialGradientFillWithCircleDemo(), ellipseDemo(), hexagonDemo(), starDemo(),
+      bitmapStrokeWithRectDemo(), roundRectComplexDemo(), circleWithBitmapFillDemo(),
+      textDemo(), spriteDemo(), blurFilterDemo(), colorFilterDemo(),
+      colorMatrixFilterDemo(), mouseDemo(), maskDemo()];
 }
