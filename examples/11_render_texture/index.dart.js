@@ -2307,7 +2307,7 @@ yU:{
 tA:function(){return this.gY8().j0(this)},
 uO:[function(){this.gY8().mO(this)},"$0","gp4",0,0,2],
 LP:[function(){this.gY8().m4(this)},"$0","gZ9",0,0,2]},
-nP:{
+Uf:{
 "^":"a;"},
 KA:{
 "^":"a;dB,o7,Bd,Lj<,Gv,lz,Ri",
@@ -3748,13 +3748,12 @@ Jo:{
 "^":"Y5;",
 LG:function(a,b){return a.deleteTexture(b)},
 kl:function(a,b,c,d,e,f,g,h,i,j){var z
-if(g==null&&h==null&&i==null&&!0){a.texImage2D(b,c,d,e,f,P.QO(g))
+if(g==null&&h==null&&i==null&&!0){a.texImage2D(b,c,d,e,f,P.nP(g))
 return}z=J.x(g)
 if((!!z.$ispA||g==null)&&h==null&&i==null&&!0){a.texImage2D(b,c,d,e,f,g)
 return}if((!!z.$isNy||g==null)&&h==null&&i==null&&!0){a.texImage2D(b,c,d,e,f,g)
 return}if((!!z.$isaG||g==null)&&h==null&&i==null&&!0){a.texImage2D(b,c,d,e,f,g)
 return}throw H.b(P.u("Incorrect number or type of arguments"))},
-j2:function(a,b,c,d,e,f,g,h,i){return this.kl(a,b,c,d,e,f,g,h,i,null)},
 ZE:function(a,b,c,d,e,f,g){return this.kl(a,b,c,d,e,f,g,null,null,null)},
 $isJo:true,
 "%":"WebGLRenderingContext"},
@@ -4015,7 +4014,7 @@ z=[]
 y=new P.Tm(new P.aI([],z),new P.rG(z),new P.yh(z)).$1(a)
 new P.wO().$0()
 return y},
-QO:function(a){return a},
+nP:function(a){return a},
 dg:function(){var z=$.L4
 if(z==null){z=J.Vw(window.navigator.userAgent,"Opera",0)
 $.L4=z}return z},
@@ -4670,7 +4669,7 @@ this.R=b
 this.fg=c
 y=H.Go(this.eo,"$isJo")
 y.bindTexture(3553,this.z6)
-C.mx.j2(y,3553,0,6408,b,c,0,6408,5121)
+y.texImage2D(3553,0,6408,b,c,0,6408,5121,null)
 y.bindRenderbuffer(36161,this.Az)
 y.renderbufferStorage(36161,34041,b,c)},
 W9:function(a,b,c,d){var z,y
@@ -5051,7 +5050,7 @@ w.enable(3042)
 w.colorMask(!0,!0,!0,z)
 w.viewport(0,0,this.R,this.fg)
 z=$.kQ()
-z.gUQ(z).aN(0,new K.l9())
+z.gUQ(z).aN(0,new K.QO())
 this.EL=!1},"$1","gpm",2,0,25],
 FU:function(a,b,c,d,e){var z,y,x,w
 if($.Ax==null)$.Ax=this
@@ -5121,7 +5120,7 @@ r4:{
 "^":"Tp:13;",
 $2:function(a,b){var z=$.w4().hP.t(0,a)
 if(z!=null)J.bl(z,b)}},
-l9:{
+QO:{
 "^":"Tp:12;",
 $1:function(a){a.gBb().sxS(P.L5(null,null,null,P.KN,P.CA))}},
 Ap:{
@@ -5418,14 +5417,14 @@ P.a2.$isa=true
 P.mE.$ismE=true
 P.mE.$isa=true
 P.KA.$isKA=true
-P.KA.$isnP=true
+P.KA.$isUf=true
 P.KA.$isMO=true
 P.KA.$isa=true
 P.a.$isa=true
 P.b8.$isb8=true
 P.b8.$isa=true
-P.nP.$isnP=true
-P.nP.$isa=true
+P.Uf.$isUf=true
+P.Uf.$isa=true
 P.fI.$isfI=true
 P.fI.$isa=true
 W.hg.$ishg=true
