@@ -15,9 +15,9 @@ class GraphicsDemo {
     stage = new Stage(Color.white);
 
     // Create a renderer instance.
-    renderer = new CanvasRenderer(width: 620, height: 380);
-    //renderer = new pixi.WebGLRenderer(width: 620, height: 380);
-    //renderer = new pixi.Renderer.autoDetect(width: 620, height: 380);
+    //renderer = new CanvasRenderer(width: 620, height: 380);
+    //renderer = new WebGLRenderer(width: 620, height: 380);
+    renderer = new Renderer.autoDetect(width: 620, height: 380);
 
     renderer.view.style.display = 'block';
 
