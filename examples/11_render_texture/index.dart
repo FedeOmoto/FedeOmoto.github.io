@@ -31,7 +31,7 @@ class RenderTextureDemo {
     renderer.view.style.display = 'block';
 
     // Add the renderer view element to the DOM.
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     // OOH! SHINY!
     // Create two render textures. These dynamic textures will be used to draw

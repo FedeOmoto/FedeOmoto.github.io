@@ -64,7 +64,7 @@ class MaskingDemo {
     renderer.view.style.display = 'block';
 
     // Add the renderer view element to the DOM.
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     // Let's create a moving shape.
     thing = new pixi.Graphics();
@@ -75,8 +75,8 @@ class MaskingDemo {
 
     container.mask = thing;
 
-    // TODO: use the stage onClick listener when InteractionManager is implemented.
-    renderer.view.onClick.listen(swapMask);
+    stage.onClick.listen(swapMask);
+    stage.onTap.listen(swapMask);
 
     var style = new pixi.TextStyle()..font = 'bold 12pt Arial';
     var help = new pixi.Text('Click to turn masking on / off.', style);
@@ -87,7 +87,7 @@ class MaskingDemo {
     window.animationFrame.then(animate);
   }
 
-  void swapMask(MouseEvent event) {
+  void swapMask(pixi.InteractionData event) {
     if (container.mask == null) {
       container.mask = thing;
     } else {

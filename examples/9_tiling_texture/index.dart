@@ -24,7 +24,7 @@ class TilingTextureDemo {
     renderer.view.style.position = 'absolute';
     renderer.view.style.top = '0px';
     renderer.view.style.left = '0px';
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     // Create a texture from an image path.
     var texture = new Texture.fromImage('p2.jpeg');

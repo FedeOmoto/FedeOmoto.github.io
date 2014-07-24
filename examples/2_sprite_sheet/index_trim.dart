@@ -28,7 +28,7 @@ class FighterDemo {
     renderer = new Renderer.autoDetect();
 
     // Add the renderer view element to the DOM.
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     // Create an empty container.
     var container = new DisplayObjectContainer();

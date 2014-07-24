@@ -5,7 +5,8 @@ import 'package:pixi_dart/pixi.dart' as pixi;
 class Dude extends pixi.Sprite {
   double direction;
   double turningSpeed;
-  int speed;
+  double speed;
+  int offset;
 
   Dude(pixi.Texture texture) : super(texture);
 
@@ -16,17 +17,16 @@ class Dude extends pixi.Sprite {
   }
 }
 
-class BlendModesDemo {
+class SpriteBatchDemo {
   pixi.Stage stage;
   pixi.Renderer renderer;
-  pixi.Texture pondFloorTexture;
-  pixi.Sprite pondFloorSprite;
-  List<pixi.Sprite> dudes = new List<pixi.Sprite>(20);
+  List<pixi.Sprite> dudes;
   pixi.Rectangle<int> dudeBounds;
+  double tick = 0.0;
 
-  BlendModesDemo() {
-    int viewWidth = 630;
-    int viewHeight = 410;
+  SpriteBatchDemo() {
+    int viewWidth = 800;
+    int viewHeight = 600;
 
     // Create a renderer instance.
     //renderer = new pixi.CanvasRenderer(width: viewWidth, height: viewHeight);
@@ -41,19 +41,19 @@ class BlendModesDemo {
     // Create an new instance of a pixi stage.
     stage = new pixi.Stage(pixi.Color.white);
 
-    // Create a background texture.
-    pondFloorTexture = new pixi.Texture.fromImage('BGrotate.jpg');
-
-    // Create a new background sprite.
-    pondFloorSprite = new pixi.Sprite(pondFloorTexture);
-    stage.addChild(pondFloorSprite);
+    var sprites = new pixi.SpriteBatch();
+    stage.addChild(sprites);
 
     var random = new Random();
+
+    int totalDudes = renderer.type == pixi.Renderer.WEBGL_RENDERER ? 10000 :
+        100;
+    dudes = new List<pixi.Sprite>(totalDudes);
 
     for (int i = 0; i < dudes.length; i++) {
       // Create a new Sprite that uses the image name that we just generated as
       // its source.
-      var dude = new Dude.fromImage('flowerTop.png');
+      var dude = new Dude.fromImage('tinyMaggot.png');
 
       // Set the anchor point so the the dude texture is centerd on the sprite.
       dude.anchor.x = dude.anchor.y = 0.5;
@@ -62,13 +62,10 @@ class BlendModesDemo {
       dude.scale.x = dude.scale.y = 0.8 + random.nextDouble() * 0.3;
 
       // Finally let's set the dude to be a random position.
-      dude.position.x = random.nextInt(viewWidth);
-      dude.position.y = random.nextInt(viewHeight);
+      dude.x = random.nextInt(viewWidth);
+      dude.y = random.nextInt(viewHeight);
 
-      // Time to add the dude to the pond container!
-      stage.addChild(dude);
-
-      dude.blendMode = pixi.BlendModes.ADD;
+      //dude.tint = new pixi.Color(random.nextInt(0x808080));
 
       // Create some extra properties that will control movement.
       // Create a random direction in radians. This is a number between 0 and
@@ -78,12 +75,16 @@ class BlendModesDemo {
       // This number will be used to modify the direction of the dude over time.
       dude.turningSpeed = random.nextDouble() - 0.8;
 
-      // Create a random speed for the dude between 2 - 4.
-      dude.speed = 2 + random.nextInt(2);
+      // Create a random speed for the dude.
+      dude.speed = (2 + random.nextInt(2)) * 0.2;
+
+      dude.offset = random.nextInt(100);
 
       // Finally we push the dude into the dudeArray so it it can be easily
       // accessed later.
       dudes[i] = dude;
+
+      sprites.addChild(dude);
     }
 
     // Create a bounding box box for the little dudes.
@@ -98,10 +99,11 @@ class BlendModesDemo {
   void animate(num value) {
     // Iterate through the dudes and update the positions.
     dudes.forEach((dude) {
+      dude.scale.y = 0.95 + sin(tick + dude.offset) * 0.05;
       dude.direction += dude.turningSpeed * 0.01;
-      dude.position.x += sin(dude.direction) * dude.speed;
-      dude.position.y += cos(dude.direction) * dude.speed;
-      dude.rotation = -dude.direction - PI / 2;
+      dude.position.x += sin(dude.direction) * (dude.speed * dude.scale.y);
+      dude.position.y += cos(dude.direction) * (dude.speed * dude.scale.y);
+      dude.rotation = -dude.direction + PI;
 
       // Wrap the dudes by testing there bounds.
       if (dude.position.x < dudeBounds.left) {
@@ -117,6 +119,9 @@ class BlendModesDemo {
       }
     });
 
+    // Increment the ticker.
+    tick += 0.1;
+
     // Time to render the stage!
     renderer.render(stage);
 
@@ -126,5 +131,5 @@ class BlendModesDemo {
 }
 
 void main() {
-  new BlendModesDemo();
+  new SpriteBatchDemo();
 }

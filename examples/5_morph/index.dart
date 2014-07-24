@@ -40,7 +40,7 @@ class MorphDemo {
     tpoint3 = new List<double>(n);
     pixels = new List<Sprite>(n);
 
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     makeObject(0);
 

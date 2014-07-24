@@ -17,7 +17,7 @@ class TransparentBackgroundDemo {
         true);
 
     // Add the renderer view element to the DOM.
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
     renderer.view.style.position = 'absolute';
     renderer.view.style.top = '0px';
     renderer.view.style.left = '0px';

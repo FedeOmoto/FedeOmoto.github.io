@@ -2,14 +2,24 @@ import 'dart:html';
 import 'dart:math';
 import 'package:pixi_dart/pixi.dart' as pixi;
 
+class Dude extends pixi.Sprite {
+  double direction;
+  double turningSpeed;
+  int speed;
+
+  Dude(pixi.Texture texture) : super(texture);
+
+  factory Dude.fromImage(String imageId, [bool crossorigin, pixi.ScaleModes<int>
+      scaleMode = pixi.ScaleModes.DEFAULT]) {
+    var texture = new pixi.Texture.fromImage(imageId, crossorigin, scaleMode);
+    return new Dude(texture);
+  }
+}
+
 class TintingDemo {
   pixi.Stage stage;
   pixi.Renderer renderer;
-  pixi.Sprite pondFloorSprite;
   List<pixi.Sprite> dudes = new List<pixi.Sprite>(20);
-  Expando<double> direction = new Expando<double>();
-  Expando<double> turningSpeed = new Expando<double>();
-  Expando<int> speed = new Expando<int>();
   pixi.Rectangle<int> dudeBounds;
 
   TintingDemo() {
@@ -24,7 +34,7 @@ class TintingDemo {
     renderer.view.className = 'rendererView';
 
     // Add the renderer view element to the DOM.
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     // Create an new instance of a pixi stage.
     stage = new pixi.Stage(pixi.Color.white);
@@ -34,7 +44,7 @@ class TintingDemo {
     for (int i = 0; i < dudes.length; i++) {
       // Create a new Sprite that uses the image name that we just generated as
       // its source.
-      var dude = new pixi.Sprite.fromImage('eggHead.png');
+      var dude = new Dude.fromImage('eggHead.png');
 
       // Set the anchor point so the the dude texture is centerd on the sprite.
       dude.anchor.x = dude.anchor.y = 0.5;
@@ -54,13 +64,13 @@ class TintingDemo {
       // Create some extra properties that will control movement.
       // Create a random direction in radians. This is a number between 0 and
       // PI*2 which is the equivalent of 0 - 360 degrees.
-      direction[dude] = random.nextDouble() * PI * 2;
+      dude.direction = random.nextDouble() * PI * 2;
 
       // This number will be used to modify the direction of the dude over time.
-      turningSpeed[dude] = random.nextDouble() - 0.8;
+      dude.turningSpeed = random.nextDouble() - 0.8;
 
       // Create a random speed for the dude between 2 - 4.
-      speed[dude] = 2 + random.nextInt(2);
+      dude.speed = 2 + random.nextInt(2);
 
       // Finally we push the dude into the dudeArray so it it can be easily
       // accessed later.
@@ -79,10 +89,10 @@ class TintingDemo {
   void animate(num value) {
     // Iterate through the dudes and update the positions.
     dudes.forEach((dude) {
-      direction[dude] = direction[dude] + turningSpeed[dude] * 0.01;
-      dude.position.x += (sin(direction[dude]) * speed[dude]).round();
-      dude.position.y += (cos(direction[dude]) * speed[dude]).round();
-      dude.rotation = -direction[dude] - PI / 2;
+      dude.direction += dude.turningSpeed * 0.01;
+      dude.position.x += sin(dude.direction) * dude.speed;
+      dude.position.y += cos(dude.direction) * dude.speed;
+      dude.rotation = -dude.direction - PI / 2;
 
       // Wrap the dudes by testing there bounds.
       if (dude.position.x < dudeBounds.left) {

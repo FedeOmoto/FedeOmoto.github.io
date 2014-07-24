@@ -16,7 +16,7 @@ class BasicsDemo {
     renderer = new Renderer.autoDetect(width: 400, height: 300);
 
     // Add the renderer view element to the DOM.
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     window.animationFrame.then(animate);
 

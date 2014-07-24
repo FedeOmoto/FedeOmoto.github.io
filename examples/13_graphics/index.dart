@@ -22,7 +22,7 @@ class GraphicsDemo {
     renderer.view.style.display = 'block';
 
     // Add the renderer view element to the DOM.
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     graphics = new Graphics();
 
@@ -74,15 +74,14 @@ class GraphicsDemo {
     thing.position.x = 620 ~/ 2;
     thing.position.y = 380 ~/ 2;
 
-    // Just click on the stage to draw random lines.
-    // TODO: use the stage onClick listener when InteractionManager is implemented.
-    renderer.view.onClick.listen(drawLine);
+    stage.onClick.listen(drawLine);
+    stage.onTap.listen(drawLine);
 
     // Run the render loop.
     window.animationFrame.then(animate);
   }
 
-  void drawLine(MouseEvent event) {
+  void drawLine(InteractionData event) {
     graphics.lineStyle(random.nextInt(30), new Color(random.nextInt(0xFFFFFF)),
         1.0);
     graphics.moveTo(random.nextInt(620), random.nextInt(380));

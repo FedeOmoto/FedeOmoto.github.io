@@ -4,12 +4,12 @@ import 'package:pixi_dart/pixi.dart';
 
 class Ball {
   Sprite sprite;
-  double x;
-  double y;
+  num x;
+  num y;
 
   Ball(this.sprite) {
-    x = sprite.position.x.toDouble();
-    y = sprite.position.y.toDouble();
+    x = sprite.position.x;
+    y = sprite.position.y;
   }
 }
 
@@ -36,7 +36,7 @@ class BallsDemo {
     slideX = (w ~/ 2);
     slideY = (h ~/ 2);
 
-    querySelector('body').append(renderer.view);
+    document.body.append(renderer.view);
 
     for (int i = 0; i < 2500; i++) {
       var tempBall = new Sprite(ballTexture);
@@ -77,8 +77,8 @@ class BallsDemo {
 
   void update(num value) {
     balls.forEach((star) {
-      star.sprite.position.x = (star.x + slideX).round();
-      star.sprite.position.y = (star.y + slideY).round();
+      star.sprite.position.x = star.x + slideX;
+      star.sprite.position.y = star.y + slideY;
       star.x = (star.x * sx);
       star.y = (star.y * sy);
 

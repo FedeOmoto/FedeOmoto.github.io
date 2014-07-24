@@ -2,7 +2,7 @@ import 'dart:html';
 import 'dart:math';
 import 'package:pixi_dart/pixi.dart';
 
-class SpriteSheetDemo {
+class CacheAsBitmapDemo {
   // Holder to store aliens.
   List<Sprite> aliens = new List<Sprite>();
   List<String> alienFrames = ['eggHead.png', 'flowerTop.png', 'helmlok.png',
@@ -14,7 +14,7 @@ class SpriteSheetDemo {
   Renderer renderer;
   DisplayObjectContainer alienContainer;
 
-  SpriteSheetDemo() {
+  CacheAsBitmapDemo() {
     // Create a list of assets to load.
     var assetsToLoad = ['SpriteSheet.json'];
 
@@ -44,6 +44,14 @@ class SpriteSheetDemo {
     alienContainer.position.y = 300;
 
     stage.addChild(alienContainer);
+
+    stage.onMouseDown.listen(cacheAsBitmap);
+    stage.onTouchStart.listen(cacheAsBitmap);
+  }
+
+  void cacheAsBitmap(InteractionData event) {
+    alienContainer.cacheAsBitmap = !alienContainer.cacheAsBitmap;
+    print(alienContainer.getLocalBounds);
   }
 
   void onAssetsLoaded(CustomEvent event) {
@@ -93,5 +101,5 @@ class SpriteSheetDemo {
 }
 
 void main() {
-  new SpriteSheetDemo();
+  new CacheAsBitmapDemo();
 }
