@@ -99,7 +99,7 @@ class InteractivityDemo {
     buttons[4].rotation = PI;
 
     // Add a logo!
-    var pixiLogo = new Sprite.fromImage('pixi.png');
+    /*var pixiLogo = new Sprite.fromImage('pixi.png');
     stage.addChild(pixiLogo);
 
     pixiLogo.buttonMode = true;
@@ -115,7 +115,7 @@ class InteractivityDemo {
 
     pixiLogo.onTap.listen((event) {
       window.open('https://github.com/FedeOmoto/pixi/', '_blank');
-    });
+    });*/
   }
 
   void turnOn(InteractionData event) {
