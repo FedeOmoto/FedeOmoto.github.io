@@ -1159,22 +1159,22 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#TargetMachineRef"
-    title="TargetMachineRef* = ptr object"><wbr />Target<wbr />Machine<wbr />Ref</a></li>
+    title="TargetMachineRef = ptr object"><wbr />Target<wbr />Machine<wbr />Ref</a></li>
   <li><a class="reference" href="#TargetRef"
-    title="TargetRef* = ptr object"><wbr />Target<wbr />Ref</a></li>
+    title="TargetRef = ptr object"><wbr />Target<wbr />Ref</a></li>
   <li><a class="reference" href="#CodeGenOptLevel"
-    title="CodeGenOptLevel* = enum 
+    title="CodeGenOptLevel = enum 
   CodeGenLevelNone, CodeGenLevelLess, CodeGenLevelDefault, 
   CodeGenLevelAggressive"><wbr />Code<wbr />Gen<wbr />Opt<wbr />Level</a></li>
   <li><a class="reference" href="#RelocMode"
-    title="RelocMode* = enum 
+    title="RelocMode = enum 
   RelocDefault, RelocStatic, RelocPIC, RelocDynamicNoPic"><wbr />Reloc<wbr />Mode</a></li>
   <li><a class="reference" href="#CodeModel"
-    title="CodeModel* = enum 
+    title="CodeModel = enum 
   CodeModelDefault, CodeModelJITDefault, CodeModelSmall, CodeModelKernel, 
   CodeModelMedium, CodeModelLarge"><wbr />Code<wbr />Model</a></li>
   <li><a class="reference" href="#CodeGenFileType"
-    title="CodeGenFileType* = enum 
+    title="CodeGenFileType = enum 
   AssemblyFile, ObjectFile"><wbr />Code<wbr />Gen<wbr />File<wbr />Type</a></li>
 
   </ul>
@@ -1183,54 +1183,54 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#getFirstTarget,"
-    title="getFirstTarget*(): TargetRef"><wbr />get<wbr />First<wbr />Target</a></li>
+    title="getFirstTarget(): TargetRef"><wbr />get<wbr />First<wbr />Target</a></li>
   <li><a class="reference" href="#getNextTarget,TargetRef"
-    title="getNextTarget*(t: TargetRef): TargetRef"><wbr />get<wbr />Next<wbr />Target</a></li>
+    title="getNextTarget(t: TargetRef): TargetRef"><wbr />get<wbr />Next<wbr />Target</a></li>
   <li><a class="reference" href="#getTargetFromName,cstring"
-    title="getTargetFromName*(name: cstring): TargetRef"><wbr />get<wbr />Target<wbr />From<wbr />Name</a></li>
+    title="getTargetFromName(name: cstring): TargetRef"><wbr />get<wbr />Target<wbr />From<wbr />Name</a></li>
   <li><a class="reference" href="#getTargetFromTriple,cstring,ptr.TargetRef,cstringArray"
-    title="getTargetFromTriple*(triple: cstring; t: ptr TargetRef; 
-                     errorMessage: cstringArray): Bool"><wbr />get<wbr />Target<wbr />From<wbr />Triple</a></li>
+    title="getTargetFromTriple(triple: cstring; t: ptr TargetRef; 
+                    errorMessage: cstringArray): Bool"><wbr />get<wbr />Target<wbr />From<wbr />Triple</a></li>
   <li><a class="reference" href="#getTargetName,TargetRef"
-    title="getTargetName*(t: TargetRef): cstring"><wbr />get<wbr />Target<wbr />Name</a></li>
+    title="getTargetName(t: TargetRef): cstring"><wbr />get<wbr />Target<wbr />Name</a></li>
   <li><a class="reference" href="#getTargetDescription,TargetRef"
-    title="getTargetDescription*(t: TargetRef): cstring"><wbr />get<wbr />Target<wbr />Description</a></li>
+    title="getTargetDescription(t: TargetRef): cstring"><wbr />get<wbr />Target<wbr />Description</a></li>
   <li><a class="reference" href="#targetHasJIT,TargetRef"
-    title="targetHasJIT*(t: TargetRef): Bool"><wbr />target<wbr />Has<wbr />JIT</a></li>
+    title="targetHasJIT(t: TargetRef): Bool"><wbr />target<wbr />Has<wbr />JIT</a></li>
   <li><a class="reference" href="#targetHasTargetMachine,TargetRef"
-    title="targetHasTargetMachine*(t: TargetRef): Bool"><wbr />target<wbr />Has<wbr />Target<wbr />Machine</a></li>
+    title="targetHasTargetMachine(t: TargetRef): Bool"><wbr />target<wbr />Has<wbr />Target<wbr />Machine</a></li>
   <li><a class="reference" href="#targetHasAsmBackend,TargetRef"
-    title="targetHasAsmBackend*(t: TargetRef): Bool"><wbr />target<wbr />Has<wbr />Asm<wbr />Backend</a></li>
+    title="targetHasAsmBackend(t: TargetRef): Bool"><wbr />target<wbr />Has<wbr />Asm<wbr />Backend</a></li>
   <li><a class="reference" href="#createTargetMachine,TargetRef,cstring,cstring,cstring,CodeGenOptLevel,RelocMode,CodeModel"
-    title="createTargetMachine*(t: TargetRef; triple: cstring; cpu: cstring; 
-                     features: cstring; level: CodeGenOptLevel; 
-                     reloc: RelocMode; codeModel: CodeModel): TargetMachineRef"><wbr />create<wbr />Target<wbr />Machine</a></li>
+    title="createTargetMachine(t: TargetRef; triple: cstring; cpu: cstring; 
+                    features: cstring; level: CodeGenOptLevel; reloc: RelocMode; 
+                    codeModel: CodeModel): TargetMachineRef"><wbr />create<wbr />Target<wbr />Machine</a></li>
   <li><a class="reference" href="#disposeTargetMachine,TargetMachineRef"
-    title="disposeTargetMachine*(t: TargetMachineRef)"><wbr />dispose<wbr />Target<wbr />Machine</a></li>
+    title="disposeTargetMachine(t: TargetMachineRef)"><wbr />dispose<wbr />Target<wbr />Machine</a></li>
   <li><a class="reference" href="#getTargetMachineTarget,TargetMachineRef"
-    title="getTargetMachineTarget*(t: TargetMachineRef): TargetRef"><wbr />get<wbr />Target<wbr />Machine<wbr />Target</a></li>
+    title="getTargetMachineTarget(t: TargetMachineRef): TargetRef"><wbr />get<wbr />Target<wbr />Machine<wbr />Target</a></li>
   <li><a class="reference" href="#getTargetMachineTriple,TargetMachineRef"
-    title="getTargetMachineTriple*(t: TargetMachineRef): cstring"><wbr />get<wbr />Target<wbr />Machine<wbr />Triple</a></li>
+    title="getTargetMachineTriple(t: TargetMachineRef): cstring"><wbr />get<wbr />Target<wbr />Machine<wbr />Triple</a></li>
   <li><a class="reference" href="#getTargetMachineCPU,TargetMachineRef"
-    title="getTargetMachineCPU*(t: TargetMachineRef): cstring"><wbr />get<wbr />Target<wbr />Machine<wbr />CPU</a></li>
+    title="getTargetMachineCPU(t: TargetMachineRef): cstring"><wbr />get<wbr />Target<wbr />Machine<wbr />CPU</a></li>
   <li><a class="reference" href="#getTargetMachineFeatureString,TargetMachineRef"
-    title="getTargetMachineFeatureString*(t: TargetMachineRef): cstring"><wbr />get<wbr />Target<wbr />Machine<wbr />Feature<wbr />String</a></li>
+    title="getTargetMachineFeatureString(t: TargetMachineRef): cstring"><wbr />get<wbr />Target<wbr />Machine<wbr />Feature<wbr />String</a></li>
   <li><a class="reference" href="#getTargetMachineData,TargetMachineRef"
-    title="getTargetMachineData*(t: TargetMachineRef): TargetDataRef"><wbr />get<wbr />Target<wbr />Machine<wbr />Data</a></li>
+    title="getTargetMachineData(t: TargetMachineRef): TargetDataRef"><wbr />get<wbr />Target<wbr />Machine<wbr />Data</a></li>
   <li><a class="reference" href="#setTargetMachineAsmVerbosity,TargetMachineRef,Bool"
-    title="setTargetMachineAsmVerbosity*(t: TargetMachineRef; verboseAsm: Bool)"><wbr />set<wbr />Target<wbr />Machine<wbr />Asm<wbr />Verbosity</a></li>
+    title="setTargetMachineAsmVerbosity(t: TargetMachineRef; verboseAsm: Bool)"><wbr />set<wbr />Target<wbr />Machine<wbr />Asm<wbr />Verbosity</a></li>
   <li><a class="reference" href="#targetMachineEmitToFile,TargetMachineRef,ModuleRef,cstring,CodeGenFileType,cstringArray"
-    title="targetMachineEmitToFile*(t: TargetMachineRef; m: ModuleRef; filename: cstring; 
-                         codegen: CodeGenFileType; errorMessage: cstringArray): Bool"><wbr />target<wbr />Machine<wbr />Emit<wbr />To<wbr />File</a></li>
+    title="targetMachineEmitToFile(t: TargetMachineRef; m: ModuleRef; filename: cstring; 
+                        codegen: CodeGenFileType; errorMessage: cstringArray): Bool"><wbr />target<wbr />Machine<wbr />Emit<wbr />To<wbr />File</a></li>
   <li><a class="reference" href="#targetMachineEmitToMemoryBuffer,TargetMachineRef,ModuleRef,CodeGenFileType,cstringArray,ptr.MemoryBufferRef"
-    title="targetMachineEmitToMemoryBuffer*(t: TargetMachineRef; m: ModuleRef; 
-                                 codegen: CodeGenFileType; 
-                                 errorMessage: cstringArray; 
-                                 outMemBuf: ptr MemoryBufferRef): Bool"><wbr />target<wbr />Machine<wbr />Emit<wbr />To<wbr />Memory<wbr />Buffer</a></li>
+    title="targetMachineEmitToMemoryBuffer(t: TargetMachineRef; m: ModuleRef; 
+                                codegen: CodeGenFileType; 
+                                errorMessage: cstringArray; 
+                                outMemBuf: ptr MemoryBufferRef): Bool"><wbr />target<wbr />Machine<wbr />Emit<wbr />To<wbr />Memory<wbr />Buffer</a></li>
   <li><a class="reference" href="#getDefaultTargetTriple,"
-    title="getDefaultTargetTriple*(): cstring"><wbr />get<wbr />Default<wbr />Target<wbr />Triple</a></li>
+    title="getDefaultTargetTriple(): cstring"><wbr />get<wbr />Default<wbr />Target<wbr />Triple</a></li>
   <li><a class="reference" href="#addAnalysisPasses,TargetMachineRef,PassManagerRef"
-    title="addAnalysisPasses*(t: TargetMachineRef; pm: PassManagerRef)"><wbr />add<wbr />Analysis<wbr />Passes</a></li>
+    title="addAnalysisPasses(t: TargetMachineRef; pm: PassManagerRef)"><wbr />add<wbr />Analysis<wbr />Passes</a></li>
 
   </ul>
 </li>
@@ -1250,37 +1250,37 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
-<dt id="TargetMachineRef"><a name="TargetMachineRef"></a><pre><span class="Identifier">TargetMachineRef</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
+<dt id="TargetMachineRef"><a name="TargetMachineRef"></a><pre><span class="Identifier">TargetMachineRef</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
 <dd>
 
 
 </dd>
-<dt id="TargetRef"><a name="TargetRef"></a><pre><span class="Identifier">TargetRef</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
+<dt id="TargetRef"><a name="TargetRef"></a><pre><span class="Identifier">TargetRef</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
 <dd>
 
 
 </dd>
-<dt id="CodeGenOptLevel"><a name="CodeGenOptLevel"></a><pre><span class="Identifier">CodeGenOptLevel</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="CodeGenOptLevel"><a name="CodeGenOptLevel"></a><pre><span class="Identifier">CodeGenOptLevel</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
   <span class="Identifier">CodeGenLevelNone</span><span class="Other">,</span> <span class="Identifier">CodeGenLevelLess</span><span class="Other">,</span> <span class="Identifier">CodeGenLevelDefault</span><span class="Other">,</span> 
   <span class="Identifier">CodeGenLevelAggressive</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="RelocMode"><a name="RelocMode"></a><pre><span class="Identifier">RelocMode</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="RelocMode"><a name="RelocMode"></a><pre><span class="Identifier">RelocMode</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
   <span class="Identifier">RelocDefault</span><span class="Other">,</span> <span class="Identifier">RelocStatic</span><span class="Other">,</span> <span class="Identifier">RelocPIC</span><span class="Other">,</span> <span class="Identifier">RelocDynamicNoPic</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="CodeModel"><a name="CodeModel"></a><pre><span class="Identifier">CodeModel</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="CodeModel"><a name="CodeModel"></a><pre><span class="Identifier">CodeModel</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
   <span class="Identifier">CodeModelDefault</span><span class="Other">,</span> <span class="Identifier">CodeModelJITDefault</span><span class="Other">,</span> <span class="Identifier">CodeModelSmall</span><span class="Other">,</span> <span class="Identifier">CodeModelKernel</span><span class="Other">,</span> 
   <span class="Identifier">CodeModelMedium</span><span class="Other">,</span> <span class="Identifier">CodeModelLarge</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="CodeGenFileType"><a name="CodeGenFileType"></a><pre><span class="Identifier">CodeGenFileType</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="CodeGenFileType"><a name="CodeGenFileType"></a><pre><span class="Identifier">CodeGenFileType</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
   <span class="Identifier">AssemblyFile</span><span class="Other">,</span> <span class="Identifier">ObjectFile</span></pre></dt>
 <dd>
 
@@ -1291,134 +1291,136 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<dt id="getFirstTarget"><a name="getFirstTarget,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstTarget</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetRef</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetFirstTarget&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getFirstTarget"><a name="getFirstTarget,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getFirstTarget</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetRef</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetFirstTarget&quot;</span><span class="Other">,</span> 
+                                   <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the first llvm::Target in the registered targets list.
 
 </dd>
-<dt id="getNextTarget"><a name="getNextTarget,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getNextTarget</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetRef</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetNextTarget&quot;</span><span class="Other">,</span> 
-    <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getNextTarget"><a name="getNextTarget,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getNextTarget</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetRef</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetNextTarget&quot;</span><span class="Other">,</span> 
+    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the next llvm::Target given a previous one (or null if there's none)
 
 </dd>
-<dt id="getTargetFromName"><a name="getTargetFromName,cstring"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetFromName</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetFromName&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetFromName"><a name="getTargetFromName,cstring"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetFromName</span><span class="Other">(</span><span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetFromName&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Finds the target corresponding to the given name and stores it in T. Returns 0 on success.
 
 </dd>
-<dt id="getTargetFromTriple"><a name="getTargetFromTriple,cstring,ptr.TargetRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetFromTriple</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">triple</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">TargetRef</span><span class="Other">;</span> 
-                          <span class="Identifier">errorMessage</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetFromTriple&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetFromTriple"><a name="getTargetFromTriple,cstring,ptr.TargetRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetFromTriple</span><span class="Other">(</span><span class="Identifier">triple</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">t</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">TargetRef</span><span class="Other">;</span> 
+                         <span class="Identifier">errorMessage</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetFromTriple&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Finds the target corresponding to the given triple and stores it in T. Returns 0 on success. Optionally returns any error in ErrorMessage. Use LLVMDisposeMessage to dispose the message.
 
 </dd>
-<dt id="getTargetName"><a name="getTargetName,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetName</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetName&quot;</span><span class="Other">,</span> 
-    <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetName"><a name="getTargetName,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetName</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetName&quot;</span><span class="Other">,</span> 
+    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the name of a target. See llvm::Target::getName
 
 </dd>
-<dt id="getTargetDescription"><a name="getTargetDescription,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetDescription</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetDescription&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetDescription"><a name="getTargetDescription,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetDescription</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetDescription&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the description  of a target. See llvm::Target::getDescription
 
 </dd>
-<dt id="targetHasJIT"><a name="targetHasJIT,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetHasJIT</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetHasJIT&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="targetHasJIT"><a name="targetHasJIT,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetHasJIT</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetHasJIT&quot;</span><span class="Other">,</span> 
+                                        <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns if the target has a JIT
 
 </dd>
-<dt id="targetHasTargetMachine"><a name="targetHasTargetMachine,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetHasTargetMachine</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetHasTargetMachine&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="targetHasTargetMachine"><a name="targetHasTargetMachine,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetHasTargetMachine</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetHasTargetMachine&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns if the target has a TargetMachine associated
 
 </dd>
-<dt id="targetHasAsmBackend"><a name="targetHasAsmBackend,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetHasAsmBackend</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetHasAsmBackend&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="targetHasAsmBackend"><a name="targetHasAsmBackend,TargetRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetHasAsmBackend</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetHasAsmBackend&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns if the target as an ASM backend (required for emitting output)
 
 </dd>
-<dt id="createTargetMachine"><a name="createTargetMachine,TargetRef,cstring,cstring,cstring,CodeGenOptLevel,RelocMode,CodeModel"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createTargetMachine</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">;</span> <span class="Identifier">triple</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">cpu</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> 
-                          <span class="Identifier">features</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">level</span><span class="Other">:</span> <span class="Identifier">CodeGenOptLevel</span><span class="Other">;</span> 
-                          <span class="Identifier">reloc</span><span class="Other">:</span> <span class="Identifier">RelocMode</span><span class="Other">;</span> <span class="Identifier">codeModel</span><span class="Other">:</span> <span class="Identifier">CodeModel</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateTargetMachine&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createTargetMachine"><a name="createTargetMachine,TargetRef,cstring,cstring,cstring,CodeGenOptLevel,RelocMode,CodeModel"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createTargetMachine</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetRef</span><span class="Other">;</span> <span class="Identifier">triple</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">cpu</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> 
+                         <span class="Identifier">features</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">level</span><span class="Other">:</span> <span class="Identifier">CodeGenOptLevel</span><span class="Other">;</span> 
+                         <span class="Identifier">reloc</span><span class="Other">:</span> <span class="Identifier">RelocMode</span><span class="Other">;</span> <span class="Identifier">codeModel</span><span class="Other">:</span> <span class="Identifier">CodeModel</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateTargetMachine&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Creates a new llvm::TargetMachine. See llvm::Target::createTargetMachine
 
 </dd>
-<dt id="disposeTargetMachine"><a name="disposeTargetMachine,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">disposeTargetMachine</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMDisposeTargetMachine&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="disposeTargetMachine"><a name="disposeTargetMachine,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">disposeTargetMachine</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMDisposeTargetMachine&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Dispose the LLVMTargetMachineRef instance generated by LLVMCreateTargetMachine.
 
 </dd>
-<dt id="getTargetMachineTarget"><a name="getTargetMachineTarget,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineTarget</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineTarget&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetMachineTarget"><a name="getTargetMachineTarget,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineTarget</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineTarget&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the Target used in a TargetMachine
 
 </dd>
-<dt id="getTargetMachineTriple"><a name="getTargetMachineTriple,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineTriple</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineTriple&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetMachineTriple"><a name="getTargetMachineTriple,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineTriple</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineTriple&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the triple used creating this target machine. See llvm::TargetMachine::getTriple. The result needs to be disposed with LLVMDisposeMessage.
 
 </dd>
-<dt id="getTargetMachineCPU"><a name="getTargetMachineCPU,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineCPU</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineCPU&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetMachineCPU"><a name="getTargetMachineCPU,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineCPU</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineCPU&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the cpu used creating this target machine. See llvm::TargetMachine::getCPU. The result needs to be disposed with LLVMDisposeMessage.
 
 </dd>
-<dt id="getTargetMachineFeatureString"><a name="getTargetMachineFeatureString,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineFeatureString</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineFeatureString&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetMachineFeatureString"><a name="getTargetMachineFeatureString,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineFeatureString</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineFeatureString&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the feature string used creating this target machine. See llvm::TargetMachine::getFeatureString. The result needs to be disposed with LLVMDisposeMessage.
 
 </dd>
-<dt id="getTargetMachineData"><a name="getTargetMachineData,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineData</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetDataRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineData&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getTargetMachineData"><a name="getTargetMachineData,TargetMachineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getTargetMachineData</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetDataRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetTargetMachineData&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the llvm::DataLayout used for this llvm:TargetMachine.
 
 </dd>
-<dt id="setTargetMachineAsmVerbosity"><a name="setTargetMachineAsmVerbosity,TargetMachineRef,Bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">setTargetMachineAsmVerbosity</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">;</span> <span class="Identifier">verboseAsm</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMSetTargetMachineAsmVerbosity&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="setTargetMachineAsmVerbosity"><a name="setTargetMachineAsmVerbosity,TargetMachineRef,Bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">setTargetMachineAsmVerbosity</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">;</span> <span class="Identifier">verboseAsm</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMSetTargetMachineAsmVerbosity&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Set the target machine's ASM verbosity.
 
 </dd>
-<dt id="targetMachineEmitToFile"><a name="targetMachineEmitToFile,TargetMachineRef,ModuleRef,cstring,CodeGenFileType,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetMachineEmitToFile</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
-                              <span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">codegen</span><span class="Other">:</span> <span class="Identifier">CodeGenFileType</span><span class="Other">;</span> 
-                              <span class="Identifier">errorMessage</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetMachineEmitToFile&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="targetMachineEmitToFile"><a name="targetMachineEmitToFile,TargetMachineRef,ModuleRef,cstring,CodeGenFileType,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetMachineEmitToFile</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
+                             <span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">codegen</span><span class="Other">:</span> <span class="Identifier">CodeGenFileType</span><span class="Other">;</span> 
+                             <span class="Identifier">errorMessage</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetMachineEmitToFile&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Emits an asm or object file for the given module to the filename. This wraps several c++ only classes (among them a file stream). Returns any error in ErrorMessage. Use LLVMDisposeMessage to dispose the message.
 
 </dd>
-<dt id="targetMachineEmitToMemoryBuffer"><a name="targetMachineEmitToMemoryBuffer,TargetMachineRef,ModuleRef,CodeGenFileType,cstringArray,ptr.MemoryBufferRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetMachineEmitToMemoryBuffer</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
-                                      <span class="Identifier">codegen</span><span class="Other">:</span> <span class="Identifier">CodeGenFileType</span><span class="Other">;</span> 
-                                      <span class="Identifier">errorMessage</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">;</span> 
-                                      <span class="Identifier">outMemBuf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">MemoryBufferRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetMachineEmitToMemoryBuffer&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="targetMachineEmitToMemoryBuffer"><a name="targetMachineEmitToMemoryBuffer,TargetMachineRef,ModuleRef,CodeGenFileType,cstringArray,ptr.MemoryBufferRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">targetMachineEmitToMemoryBuffer</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
+                                     <span class="Identifier">codegen</span><span class="Other">:</span> <span class="Identifier">CodeGenFileType</span><span class="Other">;</span> 
+                                     <span class="Identifier">errorMessage</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">;</span> 
+                                     <span class="Identifier">outMemBuf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">MemoryBufferRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMTargetMachineEmitToMemoryBuffer&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Compile the LLVM IR stored in p M and store the result in p OutMemBuf.
 
 </dd>
-<dt id="getDefaultTargetTriple"><a name="getDefaultTargetTriple,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getDefaultTargetTriple</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetDefaultTargetTriple&quot;</span><span class="Other">,</span> 
-    <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getDefaultTargetTriple"><a name="getDefaultTargetTriple,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getDefaultTargetTriple</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetDefaultTargetTriple&quot;</span><span class="Other">,</span> 
+    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Get a triple for the host machine as a string. The result needs to be disposed with LLVMDisposeMessage.
 
 </dd>
-<dt id="addAnalysisPasses"><a name="addAnalysisPasses,TargetMachineRef,PassManagerRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addAnalysisPasses</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">;</span> <span class="Identifier">pm</span><span class="Other">:</span> <span class="Identifier">PassManagerRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMAddAnalysisPasses&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="addAnalysisPasses"><a name="addAnalysisPasses,TargetMachineRef,PassManagerRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addAnalysisPasses</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span><span class="Other">;</span> <span class="Identifier">pm</span><span class="Other">:</span> <span class="Identifier">PassManagerRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMAddAnalysisPasses&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Adds the target-specific analysis passes to the pass manager.
 
@@ -1433,7 +1435,7 @@ Adds the target-specific analysis passes to the pass manager.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-05-05 18:56:12 UTC</small>
+        <small>Made with Nim. Generated: 2015-05-06 18:36:07 UTC</small>
       </div>
     </div>
   </div>

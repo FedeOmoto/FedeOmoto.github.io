@@ -1489,8 +1489,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="fp128Type(): TypeRef"><wbr />fp128Type</a></li>
   <li><a class="reference" href="#ppcFP128Type,"
     title="ppcFP128Type(): TypeRef"><wbr />ppc<wbr />FP128Type</a></li>
-  <li><a class="reference" href="#functionType,TypeRef,TypeRef,cuint,Bool"
-    title="functionType(returnType: TypeRef; paramTypes: TypeRef; paramCount: cuint; 
+  <li><a class="reference" href="#functionType,TypeRef,ptr.TypeRef,cuint,Bool"
+    title="functionType(returnType: TypeRef; paramTypes: ptr TypeRef; paramCount: cuint; 
              isVarArg: Bool): TypeRef"><wbr />function<wbr />Type</a></li>
   <li><a class="reference" href="#isFunctionVarArg,TypeRef"
     title="isFunctionVarArg(functionType: TypeRef): Bool"><wbr />is<wbr />Function<wbr />Var<wbr />Arg</a></li>
@@ -1977,8 +1977,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="getIntrinsicID(fn: ValueRef): cuint"><wbr />get<wbr />Intrinsic<wbr />ID</a></li>
   <li><a class="reference" href="#getFunctionCallConv,ValueRef"
     title="getFunctionCallConv(fn: ValueRef): cuint"><wbr />get<wbr />Function<wbr />Call<wbr />Conv</a></li>
-  <li><a class="reference" href="#setFunctionCallConv,ValueRef,cuint"
-    title="setFunctionCallConv(fn: ValueRef; cc: cuint)"><wbr />set<wbr />Function<wbr />Call<wbr />Conv</a></li>
+  <li><a class="reference" href="#setFunctionCallConv,ValueRef,CallConv"
+    title="setFunctionCallConv(fn: ValueRef; cc: CallConv)"><wbr />set<wbr />Function<wbr />Call<wbr />Conv</a></li>
   <li><a class="reference" href="#getGC,ValueRef"
     title="getGC(fn: ValueRef): cstring"><wbr />get<wbr />GC</a></li>
   <li><a class="reference" href="#setGC,ValueRef,cstring"
@@ -2122,8 +2122,8 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="createBuilder(): BuilderRef"><wbr />create<wbr />Builder</a></li>
   <li><a class="reference" href="#positionBuilder,BuilderRef,BasicBlockRef,ValueRef"
     title="positionBuilder(builder: BuilderRef; bb: BasicBlockRef; instr: ValueRef)"><wbr />position<wbr />Builder</a></li>
-  <li><a class="reference" href="#PositionBuilderBefore,BuilderRef,ValueRef"
-    title="PositionBuilderBefore(builder: BuilderRef; instr: ValueRef)"><wbr />Position<wbr />Builder<wbr />Before</a></li>
+  <li><a class="reference" href="#positionBuilderBefore,BuilderRef,ValueRef"
+    title="positionBuilderBefore(builder: BuilderRef; instr: ValueRef)"><wbr />position<wbr />Builder<wbr />Before</a></li>
   <li><a class="reference" href="#positionBuilderAtEnd,BuilderRef,BasicBlockRef"
     title="positionBuilderAtEnd(builder: BuilderRef; bb: BasicBlockRef)"><wbr />position<wbr />Builder<wbr />At<wbr />End</a></li>
   <li><a class="reference" href="#getInsertBlock,BuilderRef"
@@ -2419,7 +2419,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <p class="module-desc"><p>This module provides an interface to libLLVMCore, which implements the LLVM intermediate representation as well as other related types and utilities.</p>
 <p>LLVM uses a polymorphic type hierarchy which C cannot represent, therefore parameters must be passed as base types. Despite the declared types, most of the functions provided operate only on branches of the type hierarchy. The declared parameter names are descriptive and specify which type is required. Additionally, each type hierarchy is documented along with the functions that operate upon it. For more detail, refer to LLVM's C++ code. If in doubt, refer to Core.cpp, which performs parameter downcasts in the form unwrap&lt;RequiredType&gt;(Param).</p>
 <p>Many exotic languages can interoperate with C code but have a harder time with C++ due to name mangling. So in addition to C, this interface enables tools written in such languages.</p>
-Return the global pass registry, for use with initialization functions.</p>
+</p>
   <div class="section" id="6">
 <h1><a class="toc-backref" href="#6">Imports</a></h1>
 <dl class="item">
@@ -3135,9 +3135,9 @@ Obtain a 128-bit floating point type from the global context.
 Obtain a 128-bit floating point type from the global context.
 
 </dd>
-<dt id="functionType"><a name="functionType,TypeRef,TypeRef,cuint,Bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">functionType</span><span class="Other">(</span><span class="Identifier">returnType</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">paramTypes</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">paramCount</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> 
-                  <span class="Identifier">isVarArg</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TypeRef</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMFunctionType&quot;</span><span class="Other">,</span> 
-    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
+<dt id="functionType"><a name="functionType,TypeRef,ptr.TypeRef,cuint,Bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">functionType</span><span class="Other">(</span><span class="Identifier">returnType</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">paramTypes</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> 
+                  <span class="Identifier">paramCount</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">isVarArg</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TypeRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMFunctionType&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>Obtain a function type consisting of a specified signature.</p>
 <p>The function is defined as a tuple of a return Type, a list of parameter types, and whether the function is variadic.</p>
@@ -4615,7 +4615,7 @@ Obtain the ID number from a function instance.
 
 
 </dd>
-<dt id="setFunctionCallConv"><a name="setFunctionCallConv,ValueRef,cuint"></a><pre><span class="Keyword">proc</span> <span class="Identifier">setFunctionCallConv</span><span class="Other">(</span><span class="Identifier">fn</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">;</span> <span class="Identifier">cc</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span> <span class="Other">{.</span>
+<dt id="setFunctionCallConv"><a name="setFunctionCallConv,ValueRef,CallConv"></a><pre><span class="Keyword">proc</span> <span class="Identifier">setFunctionCallConv</span><span class="Other">(</span><span class="Identifier">fn</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">;</span> <span class="Identifier">cc</span><span class="Other">:</span> <span class="Identifier">CallConv</span><span class="Other">)</span> <span class="Other">{.</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMSetFunctionCallConv&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Set the calling convention of a function.
@@ -5102,7 +5102,7 @@ Obtain an incoming value to a PHI node as an LLVMBasicBlockRef.
 
 
 </dd>
-<dt id="PositionBuilderBefore"><a name="PositionBuilderBefore,BuilderRef,ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">PositionBuilderBefore</span><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <span class="Identifier">BuilderRef</span><span class="Other">;</span> <span class="Identifier">instr</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">)</span> <span class="Other">{.</span>
+<dt id="positionBuilderBefore"><a name="positionBuilderBefore,BuilderRef,ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">positionBuilderBefore</span><span class="Other">(</span><span class="Identifier">builder</span><span class="Other">:</span> <span class="Identifier">BuilderRef</span><span class="Other">;</span> <span class="Identifier">instr</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">)</span> <span class="Other">{.</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMPositionBuilderBefore&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
@@ -5855,7 +5855,7 @@ Destroys the module M.
 <dt id="getGlobalPassRegistry"><a name="getGlobalPassRegistry,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getGlobalPassRegistry</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">PassRegistryRef</span> <span class="Other">{.</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetGlobalPassRegistry&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
-
+Return the global pass registry, for use with initialization functions.
 
 </dd>
 <dt id="createPassManager"><a name="createPassManager,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createPassManager</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">PassManagerRef</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreatePassManager&quot;</span><span class="Other">,</span> 
@@ -5936,7 +5936,7 @@ Check whether LLVM is executing in thread-safe mode or not.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-05-03 14:24:49 UTC</small>
+        <small>Made with Nim. Generated: 2015-05-06 18:35:40 UTC</small>
       </div>
     </div>
   </div>

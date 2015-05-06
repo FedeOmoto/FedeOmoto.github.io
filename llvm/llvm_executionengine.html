@@ -1159,29 +1159,29 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <a class="reference reference-toplevel" href="#7" id="57">Types</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#GenericValueRef"
-    title="GenericValueRef* = ptr object"><wbr />Generic<wbr />Value<wbr />Ref</a></li>
+    title="GenericValueRef = ptr object"><wbr />Generic<wbr />Value<wbr />Ref</a></li>
   <li><a class="reference" href="#ExecutionEngineRef"
-    title="ExecutionEngineRef* = ptr object"><wbr />Execution<wbr />Engine<wbr />Ref</a></li>
+    title="ExecutionEngineRef = ptr object"><wbr />Execution<wbr />Engine<wbr />Ref</a></li>
   <li><a class="reference" href="#MCJITMemoryManagerRef"
-    title="MCJITMemoryManagerRef* = ptr object"><wbr />MCJITMemory<wbr />Manager<wbr />Ref</a></li>
+    title="MCJITMemoryManagerRef = ptr object"><wbr />MCJITMemory<wbr />Manager<wbr />Ref</a></li>
   <li><a class="reference" href="#MCJITCompilerOptions"
-    title="MCJITCompilerOptions* = object 
+    title="MCJITCompilerOptions = object 
   optLevel*: cuint
   codeModel*: CodeModel
   noFramePointerElim*: Bool
   enableFastISel*: Bool
   mcJMM*: MCJITMemoryManagerRef"><wbr />MCJITCompiler<wbr />Options</a></li>
   <li><a class="reference" href="#MemoryManagerAllocateCodeSectionCallback"
-    title="MemoryManagerAllocateCodeSectionCallback* = proc (opaque: pointer; size: uint; 
+    title="MemoryManagerAllocateCodeSectionCallback = proc (opaque: pointer; size: uint; 
     alignment: cuint; sectionID: cuint; sectionName: cstring): ptr cuchar"><wbr />Memory<wbr />Manager<wbr />Allocate<wbr />Code<wbr />Section<wbr />Callback</a></li>
   <li><a class="reference" href="#MemoryManagerAllocateDataSectionCallback"
-    title="MemoryManagerAllocateDataSectionCallback* = proc (opaque: pointer; size: uint; 
+    title="MemoryManagerAllocateDataSectionCallback = proc (opaque: pointer; size: uint; 
     alignment: cuint; sectionID: cuint; sectionName: cstring; isReadOnly: Bool): ptr cuchar"><wbr />Memory<wbr />Manager<wbr />Allocate<wbr />Data<wbr />Section<wbr />Callback</a></li>
   <li><a class="reference" href="#MemoryManagerFinalizeMemoryCallback"
-    title="MemoryManagerFinalizeMemoryCallback* = proc (opaque: pointer; 
+    title="MemoryManagerFinalizeMemoryCallback = proc (opaque: pointer; 
     errMsg: cstringArray): Bool"><wbr />Memory<wbr />Manager<wbr />Finalize<wbr />Memory<wbr />Callback</a></li>
   <li><a class="reference" href="#MemoryManagerDestroyCallback"
-    title="MemoryManagerDestroyCallback* = proc (opaque: pointer)"><wbr />Memory<wbr />Manager<wbr />Destroy<wbr />Callback</a></li>
+    title="MemoryManagerDestroyCallback = proc (opaque: pointer)"><wbr />Memory<wbr />Manager<wbr />Destroy<wbr />Callback</a></li>
 
   </ul>
 </li>
@@ -1189,95 +1189,95 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
   <a class="reference reference-toplevel" href="#12" id="62">Procs</a>
   <ul class="simple simple-toc-section">
       <li><a class="reference" href="#linkInJIT,"
-    title="linkInJIT*()"><wbr />link<wbr />In<wbr />JIT</a></li>
+    title="linkInJIT()"><wbr />link<wbr />In<wbr />JIT</a></li>
   <li><a class="reference" href="#linkInMCJIT,"
-    title="linkInMCJIT*()"><wbr />link<wbr />In<wbr />MCJIT</a></li>
+    title="linkInMCJIT()"><wbr />link<wbr />In<wbr />MCJIT</a></li>
   <li><a class="reference" href="#linkInInterpreter,"
-    title="linkInInterpreter*()"><wbr />link<wbr />In<wbr />Interpreter</a></li>
+    title="linkInInterpreter()"><wbr />link<wbr />In<wbr />Interpreter</a></li>
   <li><a class="reference" href="#createGenericValueOfInt,TypeRef,culonglong,Bool"
-    title="createGenericValueOfInt*(ty: TypeRef; n: culonglong; isSigned: Bool): GenericValueRef"><wbr />create<wbr />Generic<wbr />Value<wbr />Of<wbr />Int</a></li>
+    title="createGenericValueOfInt(ty: TypeRef; n: culonglong; isSigned: Bool): GenericValueRef"><wbr />create<wbr />Generic<wbr />Value<wbr />Of<wbr />Int</a></li>
   <li><a class="reference" href="#createGenericValueOfPointer,pointer"
-    title="createGenericValueOfPointer*(p: pointer): GenericValueRef"><wbr />create<wbr />Generic<wbr />Value<wbr />Of<wbr />Pointer</a></li>
+    title="createGenericValueOfPointer(p: pointer): GenericValueRef"><wbr />create<wbr />Generic<wbr />Value<wbr />Of<wbr />Pointer</a></li>
   <li><a class="reference" href="#createGenericValueOfFloat,TypeRef,cdouble"
-    title="createGenericValueOfFloat*(ty: TypeRef; n: cdouble): GenericValueRef"><wbr />create<wbr />Generic<wbr />Value<wbr />Of<wbr />Float</a></li>
+    title="createGenericValueOfFloat(ty: TypeRef; n: cdouble): GenericValueRef"><wbr />create<wbr />Generic<wbr />Value<wbr />Of<wbr />Float</a></li>
   <li><a class="reference" href="#genericValueIntWidth,GenericValueRef"
-    title="genericValueIntWidth*(genValRef: GenericValueRef): cuint"><wbr />generic<wbr />Value<wbr />Int<wbr />Width</a></li>
+    title="genericValueIntWidth(genValRef: GenericValueRef): cuint"><wbr />generic<wbr />Value<wbr />Int<wbr />Width</a></li>
   <li><a class="reference" href="#genericValueToInt,GenericValueRef,Bool"
-    title="genericValueToInt*(genVal: GenericValueRef; isSigned: Bool): culonglong"><wbr />generic<wbr />Value<wbr />To<wbr />Int</a></li>
+    title="genericValueToInt(genVal: GenericValueRef; isSigned: Bool): culonglong"><wbr />generic<wbr />Value<wbr />To<wbr />Int</a></li>
   <li><a class="reference" href="#genericValueToPointer,GenericValueRef"
-    title="genericValueToPointer*(genVal: GenericValueRef): pointer"><wbr />generic<wbr />Value<wbr />To<wbr />Pointer</a></li>
+    title="genericValueToPointer(genVal: GenericValueRef): pointer"><wbr />generic<wbr />Value<wbr />To<wbr />Pointer</a></li>
   <li><a class="reference" href="#genericValueToFloat,TypeRef,GenericValueRef"
-    title="genericValueToFloat*(tyRef: TypeRef; genVal: GenericValueRef): cdouble"><wbr />generic<wbr />Value<wbr />To<wbr />Float</a></li>
+    title="genericValueToFloat(tyRef: TypeRef; genVal: GenericValueRef): cdouble"><wbr />generic<wbr />Value<wbr />To<wbr />Float</a></li>
   <li><a class="reference" href="#disposeGenericValue,GenericValueRef"
-    title="disposeGenericValue*(genVal: GenericValueRef)"><wbr />dispose<wbr />Generic<wbr />Value</a></li>
+    title="disposeGenericValue(genVal: GenericValueRef)"><wbr />dispose<wbr />Generic<wbr />Value</a></li>
   <li><a class="reference" href="#createExecutionEngineForModule,ptr.ExecutionEngineRef,ModuleRef,cstringArray"
-    title="createExecutionEngineForModule*(outEE: ptr ExecutionEngineRef; m: ModuleRef; 
-                                outError: cstringArray): Bool"><wbr />create<wbr />Execution<wbr />Engine<wbr />For<wbr />Module</a></li>
+    title="createExecutionEngineForModule(outEE: ptr ExecutionEngineRef; m: ModuleRef; 
+                               outError: cstringArray): Bool"><wbr />create<wbr />Execution<wbr />Engine<wbr />For<wbr />Module</a></li>
   <li><a class="reference" href="#createInterpreterForModule,ptr.ExecutionEngineRef,ModuleRef,cstringArray"
-    title="createInterpreterForModule*(outInterp: ptr ExecutionEngineRef; m: ModuleRef; 
-                            outError: cstringArray): Bool"><wbr />create<wbr />Interpreter<wbr />For<wbr />Module</a></li>
+    title="createInterpreterForModule(outInterp: ptr ExecutionEngineRef; m: ModuleRef; 
+                           outError: cstringArray): Bool"><wbr />create<wbr />Interpreter<wbr />For<wbr />Module</a></li>
   <li><a class="reference" href="#createJITCompilerForModule,ptr.ExecutionEngineRef,ModuleRef,cuint,cstringArray"
-    title="createJITCompilerForModule*(outJIT: ptr ExecutionEngineRef; m: ModuleRef; 
-                            optLevel: cuint; outError: cstringArray): Bool"><wbr />create<wbr />JITCompiler<wbr />For<wbr />Module</a></li>
+    title="createJITCompilerForModule(outJIT: ptr ExecutionEngineRef; m: ModuleRef; 
+                           optLevel: cuint; outError: cstringArray): Bool"><wbr />create<wbr />JITCompiler<wbr />For<wbr />Module</a></li>
   <li><a class="reference" href="#initializeMCJITCompilerOptions,ptr.MCJITCompilerOptions,csize"
-    title="initializeMCJITCompilerOptions*(options: ptr MCJITCompilerOptions; 
-                                sizeOfOptions: csize)"><wbr />initialize<wbr />MCJITCompiler<wbr />Options</a></li>
+    title="initializeMCJITCompilerOptions(options: ptr MCJITCompilerOptions; 
+                               sizeOfOptions: csize)"><wbr />initialize<wbr />MCJITCompiler<wbr />Options</a></li>
   <li><a class="reference" href="#createMCJITCompilerForModule,ptr.ExecutionEngineRef,ModuleRef,ptr.MCJITCompilerOptions,csize,cstringArray"
-    title="createMCJITCompilerForModule*(outJIT: ptr ExecutionEngineRef; m: ModuleRef; 
-                              options: ptr MCJITCompilerOptions; 
-                              sizeOfOptions: csize; outError: cstringArray): Bool"><wbr />create<wbr />MCJITCompiler<wbr />For<wbr />Module</a></li>
+    title="createMCJITCompilerForModule(outJIT: ptr ExecutionEngineRef; m: ModuleRef; 
+                             options: ptr MCJITCompilerOptions; 
+                             sizeOfOptions: csize; outError: cstringArray): Bool"><wbr />create<wbr />MCJITCompiler<wbr />For<wbr />Module</a></li>
   <li><a class="reference" href="#createExecutionEngine,ptr.ExecutionEngineRef,ModuleProviderRef,cstringArray"
-    title="createExecutionEngine*(outEE: ptr ExecutionEngineRef; mp: ModuleProviderRef; 
-                       outError: cstringArray): Bool"><wbr />create<wbr />Execution<wbr />Engine</a></li>
+    title="createExecutionEngine(outEE: ptr ExecutionEngineRef; mp: ModuleProviderRef; 
+                      outError: cstringArray): Bool"><wbr />create<wbr />Execution<wbr />Engine</a></li>
   <li><a class="reference" href="#createInterpreter,ptr.ExecutionEngineRef,ModuleProviderRef,cstringArray"
-    title="createInterpreter*(outInterp: ptr ExecutionEngineRef; mp: ModuleProviderRef; 
-                   outError: cstringArray): Bool"><wbr />create<wbr />Interpreter</a></li>
+    title="createInterpreter(outInterp: ptr ExecutionEngineRef; mp: ModuleProviderRef; 
+                  outError: cstringArray): Bool"><wbr />create<wbr />Interpreter</a></li>
   <li><a class="reference" href="#createJITCompiler,ptr.ExecutionEngineRef,ModuleProviderRef,cuint,cstringArray"
-    title="createJITCompiler*(outJIT: ptr ExecutionEngineRef; mp: ModuleProviderRef; 
-                   optLevel: cuint; outError: cstringArray): Bool"><wbr />create<wbr />JITCompiler</a></li>
+    title="createJITCompiler(outJIT: ptr ExecutionEngineRef; mp: ModuleProviderRef; 
+                  optLevel: cuint; outError: cstringArray): Bool"><wbr />create<wbr />JITCompiler</a></li>
   <li><a class="reference" href="#disposeExecutionEngine,ExecutionEngineRef"
-    title="disposeExecutionEngine*(ee: ExecutionEngineRef)"><wbr />dispose<wbr />Execution<wbr />Engine</a></li>
+    title="disposeExecutionEngine(ee: ExecutionEngineRef)"><wbr />dispose<wbr />Execution<wbr />Engine</a></li>
   <li><a class="reference" href="#runStaticConstructors,ExecutionEngineRef"
-    title="runStaticConstructors*(ee: ExecutionEngineRef)"><wbr />run<wbr />Static<wbr />Constructors</a></li>
+    title="runStaticConstructors(ee: ExecutionEngineRef)"><wbr />run<wbr />Static<wbr />Constructors</a></li>
   <li><a class="reference" href="#runStaticDestructors,ExecutionEngineRef"
-    title="runStaticDestructors*(ee: ExecutionEngineRef)"><wbr />run<wbr />Static<wbr />Destructors</a></li>
+    title="runStaticDestructors(ee: ExecutionEngineRef)"><wbr />run<wbr />Static<wbr />Destructors</a></li>
   <li><a class="reference" href="#runFunctionAsMain,ExecutionEngineRef,ValueRef,cuint,cstringArray,cstringArray"
-    title="runFunctionAsMain*(ee: ExecutionEngineRef; f: ValueRef; argC: cuint; 
-                   argV: cstringArray; envP: cstringArray): cint"><wbr />run<wbr />Function<wbr />As<wbr />Main</a></li>
+    title="runFunctionAsMain(ee: ExecutionEngineRef; f: ValueRef; argC: cuint; 
+                  argV: cstringArray; envP: cstringArray): cint"><wbr />run<wbr />Function<wbr />As<wbr />Main</a></li>
   <li><a class="reference" href="#runFunction,ExecutionEngineRef,ValueRef,cuint,ptr.GenericValueRef"
-    title="runFunction*(ee: ExecutionEngineRef; f: ValueRef; numArgs: cuint; 
-             args: ptr GenericValueRef): GenericValueRef"><wbr />run<wbr />Function</a></li>
+    title="runFunction(ee: ExecutionEngineRef; f: ValueRef; numArgs: cuint; 
+            args: ptr GenericValueRef): GenericValueRef"><wbr />run<wbr />Function</a></li>
   <li><a class="reference" href="#freeMachineCodeForFunction,ExecutionEngineRef,ValueRef"
-    title="freeMachineCodeForFunction*(ee: ExecutionEngineRef; f: ValueRef)"><wbr />free<wbr />Machine<wbr />Code<wbr />For<wbr />Function</a></li>
+    title="freeMachineCodeForFunction(ee: ExecutionEngineRef; f: ValueRef)"><wbr />free<wbr />Machine<wbr />Code<wbr />For<wbr />Function</a></li>
   <li><a class="reference" href="#addModule,ExecutionEngineRef,ModuleRef"
-    title="addModule*(ee: ExecutionEngineRef; m: ModuleRef)"><wbr />add<wbr />Module</a></li>
+    title="addModule(ee: ExecutionEngineRef; m: ModuleRef)"><wbr />add<wbr />Module</a></li>
   <li><a class="reference" href="#addModuleProvider,ExecutionEngineRef,ModuleProviderRef"
-    title="addModuleProvider*(ee: ExecutionEngineRef; mp: ModuleProviderRef)"><wbr />add<wbr />Module<wbr />Provider</a></li>
+    title="addModuleProvider(ee: ExecutionEngineRef; mp: ModuleProviderRef)"><wbr />add<wbr />Module<wbr />Provider</a></li>
   <li><a class="reference" href="#removeModule,ExecutionEngineRef,ModuleRef,ptr.ModuleRef,cstringArray"
-    title="removeModule*(ee: ExecutionEngineRef; m: ModuleRef; outMod: ptr ModuleRef; 
-              outError: cstringArray): Bool"><wbr />remove<wbr />Module</a></li>
+    title="removeModule(ee: ExecutionEngineRef; m: ModuleRef; outMod: ptr ModuleRef; 
+             outError: cstringArray): Bool"><wbr />remove<wbr />Module</a></li>
   <li><a class="reference" href="#removeModuleProvider,ExecutionEngineRef,ModuleProviderRef,ptr.ModuleRef,cstringArray"
-    title="removeModuleProvider*(ee: ExecutionEngineRef; mp: ModuleProviderRef; 
-                      outMod: ptr ModuleRef; outError: cstringArray): Bool"><wbr />remove<wbr />Module<wbr />Provider</a></li>
+    title="removeModuleProvider(ee: ExecutionEngineRef; mp: ModuleProviderRef; 
+                     outMod: ptr ModuleRef; outError: cstringArray): Bool"><wbr />remove<wbr />Module<wbr />Provider</a></li>
   <li><a class="reference" href="#findFunction,ExecutionEngineRef,cstring,ptr.ValueRef"
-    title="findFunction*(ee: ExecutionEngineRef; name: cstring; outFn: ptr ValueRef): Bool"><wbr />find<wbr />Function</a></li>
+    title="findFunction(ee: ExecutionEngineRef; name: cstring; outFn: ptr ValueRef): Bool"><wbr />find<wbr />Function</a></li>
   <li><a class="reference" href="#recompileAndRelinkFunction,ExecutionEngineRef,ValueRef"
-    title="recompileAndRelinkFunction*(ee: ExecutionEngineRef; fn: ValueRef): pointer"><wbr />recompile<wbr />And<wbr />Relink<wbr />Function</a></li>
+    title="recompileAndRelinkFunction(ee: ExecutionEngineRef; fn: ValueRef): pointer"><wbr />recompile<wbr />And<wbr />Relink<wbr />Function</a></li>
   <li><a class="reference" href="#getExecutionEngineTargetData,ExecutionEngineRef"
-    title="getExecutionEngineTargetData*(ee: ExecutionEngineRef): TargetDataRef"><wbr />get<wbr />Execution<wbr />Engine<wbr />Target<wbr />Data</a></li>
+    title="getExecutionEngineTargetData(ee: ExecutionEngineRef): TargetDataRef"><wbr />get<wbr />Execution<wbr />Engine<wbr />Target<wbr />Data</a></li>
   <li><a class="reference" href="#getExecutionEngineTargetMachine,ExecutionEngineRef"
-    title="getExecutionEngineTargetMachine*(ee: ExecutionEngineRef): TargetMachineRef"><wbr />get<wbr />Execution<wbr />Engine<wbr />Target<wbr />Machine</a></li>
+    title="getExecutionEngineTargetMachine(ee: ExecutionEngineRef): TargetMachineRef"><wbr />get<wbr />Execution<wbr />Engine<wbr />Target<wbr />Machine</a></li>
   <li><a class="reference" href="#addGlobalMapping,ExecutionEngineRef,ValueRef,pointer"
-    title="addGlobalMapping*(ee: ExecutionEngineRef; global: ValueRef; address: pointer)"><wbr />add<wbr />Global<wbr />Mapping</a></li>
+    title="addGlobalMapping(ee: ExecutionEngineRef; global: ValueRef; address: pointer)"><wbr />add<wbr />Global<wbr />Mapping</a></li>
   <li><a class="reference" href="#getPointerToGlobal,ExecutionEngineRef,ValueRef"
-    title="getPointerToGlobal*(ee: ExecutionEngineRef; global: ValueRef): pointer"><wbr />get<wbr />Pointer<wbr />To<wbr />Global</a></li>
+    title="getPointerToGlobal(ee: ExecutionEngineRef; global: ValueRef): pointer"><wbr />get<wbr />Pointer<wbr />To<wbr />Global</a></li>
   <li><a class="reference" href="#createSimpleMCJITMemoryManager,pointer,MemoryManagerAllocateCodeSectionCallback,MemoryManagerAllocateDataSectionCallback,MemoryManagerFinalizeMemoryCallback,MemoryManagerDestroyCallback"
-    title="createSimpleMCJITMemoryManager*(opaque: pointer; allocateCodeSection: MemoryManagerAllocateCodeSectionCallback; 
+    title="createSimpleMCJITMemoryManager(opaque: pointer; allocateCodeSection: MemoryManagerAllocateCodeSectionCallback; 
     allocateDataSection: MemoryManagerAllocateDataSectionCallback; 
     finalizeMemory: MemoryManagerFinalizeMemoryCallback; 
-                                destroy: MemoryManagerDestroyCallback): MCJITMemoryManagerRef"><wbr />create<wbr />Simple<wbr />MCJITMemory<wbr />Manager</a></li>
+                               destroy: MemoryManagerDestroyCallback): MCJITMemoryManagerRef"><wbr />create<wbr />Simple<wbr />MCJITMemory<wbr />Manager</a></li>
   <li><a class="reference" href="#disposeMCJITMemoryManager,MCJITMemoryManagerRef"
-    title="disposeMCJITMemoryManager*(mm: MCJITMemoryManagerRef)"><wbr />dispose<wbr />MCJITMemory<wbr />Manager</a></li>
+    title="disposeMCJITMemoryManager(mm: MCJITMemoryManagerRef)"><wbr />dispose<wbr />MCJITMemory<wbr />Manager</a></li>
 
   </ul>
 </li>
@@ -1297,22 +1297,22 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#7">Types</a></h1>
 <dl class="item">
-<dt id="GenericValueRef"><a name="GenericValueRef"></a><pre><span class="Identifier">GenericValueRef</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
+<dt id="GenericValueRef"><a name="GenericValueRef"></a><pre><span class="Identifier">GenericValueRef</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
 <dd>
 
 
 </dd>
-<dt id="ExecutionEngineRef"><a name="ExecutionEngineRef"></a><pre><span class="Identifier">ExecutionEngineRef</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
+<dt id="ExecutionEngineRef"><a name="ExecutionEngineRef"></a><pre><span class="Identifier">ExecutionEngineRef</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
 <dd>
 
 
 </dd>
-<dt id="MCJITMemoryManagerRef"><a name="MCJITMemoryManagerRef"></a><pre><span class="Identifier">MCJITMemoryManagerRef</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
+<dt id="MCJITMemoryManagerRef"><a name="MCJITMemoryManagerRef"></a><pre><span class="Identifier">MCJITMemoryManagerRef</span> <span class="Other">=</span> <span class="Keyword">ptr</span> <span class="Keyword">object</span> </pre></dt>
 <dd>
 
 
 </dd>
-<dt id="MCJITCompilerOptions"><a name="MCJITCompilerOptions"></a><pre><span class="Identifier">MCJITCompilerOptions</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">object</span> 
+<dt id="MCJITCompilerOptions"><a name="MCJITCompilerOptions"></a><pre><span class="Identifier">MCJITCompilerOptions</span> <span class="Other">=</span> <span class="Keyword">object</span> 
   <span class="Identifier">optLevel</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">cuint</span>
   <span class="Identifier">codeModel</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">CodeModel</span>
   <span class="Identifier">noFramePointerElim</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">Bool</span>
@@ -1323,27 +1323,27 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 
 
 </dd>
-<dt id="MemoryManagerAllocateCodeSectionCallback"><a name="MemoryManagerAllocateCodeSectionCallback"></a><pre><span class="Identifier">MemoryManagerAllocateCodeSectionCallback</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">uint</span><span class="Other">;</span> 
+<dt id="MemoryManagerAllocateCodeSectionCallback"><a name="MemoryManagerAllocateCodeSectionCallback"></a><pre><span class="Identifier">MemoryManagerAllocateCodeSectionCallback</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">uint</span><span class="Other">;</span> 
     <span class="Identifier">alignment</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">sectionID</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">sectionName</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cuchar</span> <span class="Other">{.</span>
     <span class="Identifier">cdecl</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="MemoryManagerAllocateDataSectionCallback"><a name="MemoryManagerAllocateDataSectionCallback"></a><pre><span class="Identifier">MemoryManagerAllocateDataSectionCallback</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">uint</span><span class="Other">;</span> 
+<dt id="MemoryManagerAllocateDataSectionCallback"><a name="MemoryManagerAllocateDataSectionCallback"></a><pre><span class="Identifier">MemoryManagerAllocateDataSectionCallback</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">uint</span><span class="Other">;</span> 
     <span class="Identifier">alignment</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">sectionID</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">sectionName</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">isReadOnly</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cuchar</span> <span class="Other">{.</span>
     <span class="Identifier">cdecl</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="MemoryManagerFinalizeMemoryCallback"><a name="MemoryManagerFinalizeMemoryCallback"></a><pre><span class="Identifier">MemoryManagerFinalizeMemoryCallback</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> 
+<dt id="MemoryManagerFinalizeMemoryCallback"><a name="MemoryManagerFinalizeMemoryCallback"></a><pre><span class="Identifier">MemoryManagerFinalizeMemoryCallback</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> 
     <span class="Identifier">errMsg</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="MemoryManagerDestroyCallback"><a name="MemoryManagerDestroyCallback"></a><pre><span class="Identifier">MemoryManagerDestroyCallback</span><span class="Operator">*</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">.}</span></pre></dt>
+<dt id="MemoryManagerDestroyCallback"><a name="MemoryManagerDestroyCallback"></a><pre><span class="Identifier">MemoryManagerDestroyCallback</span> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">cdecl</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
@@ -1353,101 +1353,102 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#12">Procs</a></h1>
 <dl class="item">
-<dt id="linkInJIT"><a name="linkInJIT,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">linkInJIT</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMLinkInJIT&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="linkInJIT"><a name="linkInJIT,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">linkInJIT</span><span class="Other">(</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMLinkInJIT&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="linkInMCJIT"><a name="linkInMCJIT,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">linkInMCJIT</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMLinkInMCJIT&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="linkInMCJIT"><a name="linkInMCJIT,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">linkInMCJIT</span><span class="Other">(</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMLinkInMCJIT&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="linkInInterpreter"><a name="linkInInterpreter,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">linkInInterpreter</span><span class="Operator">*</span><span class="Other">(</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMLinkInInterpreter&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="linkInInterpreter"><a name="linkInInterpreter,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">linkInInterpreter</span><span class="Other">(</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMLinkInInterpreter&quot;</span><span class="Other">,</span> 
+                           <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="createGenericValueOfInt"><a name="createGenericValueOfInt,TypeRef,culonglong,Bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createGenericValueOfInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ty</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">culonglong</span><span class="Other">;</span> <span class="Identifier">isSigned</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateGenericValueOfInt&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createGenericValueOfInt"><a name="createGenericValueOfInt,TypeRef,culonglong,Bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createGenericValueOfInt</span><span class="Other">(</span><span class="Identifier">ty</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">culonglong</span><span class="Other">;</span> <span class="Identifier">isSigned</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateGenericValueOfInt&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="createGenericValueOfPointer"><a name="createGenericValueOfPointer,pointer"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createGenericValueOfPointer</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateGenericValueOfPointer&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createGenericValueOfPointer"><a name="createGenericValueOfPointer,pointer"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createGenericValueOfPointer</span><span class="Other">(</span><span class="Identifier">p</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateGenericValueOfPointer&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="createGenericValueOfFloat"><a name="createGenericValueOfFloat,TypeRef,cdouble"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createGenericValueOfFloat</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ty</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">cdouble</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateGenericValueOfFloat&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createGenericValueOfFloat"><a name="createGenericValueOfFloat,TypeRef,cdouble"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createGenericValueOfFloat</span><span class="Other">(</span><span class="Identifier">ty</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">cdouble</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateGenericValueOfFloat&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="genericValueIntWidth"><a name="genericValueIntWidth,GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">genericValueIntWidth</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">genValRef</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cuint</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGenericValueIntWidth&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="genericValueIntWidth"><a name="genericValueIntWidth,GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">genericValueIntWidth</span><span class="Other">(</span><span class="Identifier">genValRef</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cuint</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGenericValueIntWidth&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="genericValueToInt"><a name="genericValueToInt,GenericValueRef,Bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">genericValueToInt</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">genVal</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">;</span> <span class="Identifier">isSigned</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">culonglong</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGenericValueToInt&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="genericValueToInt"><a name="genericValueToInt,GenericValueRef,Bool"></a><pre><span class="Keyword">proc</span> <span class="Identifier">genericValueToInt</span><span class="Other">(</span><span class="Identifier">genVal</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">;</span> <span class="Identifier">isSigned</span><span class="Other">:</span> <span class="Identifier">Bool</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">culonglong</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGenericValueToInt&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="genericValueToPointer"><a name="genericValueToPointer,GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">genericValueToPointer</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">genVal</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGenericValueToPointer&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="genericValueToPointer"><a name="genericValueToPointer,GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">genericValueToPointer</span><span class="Other">(</span><span class="Identifier">genVal</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGenericValueToPointer&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="genericValueToFloat"><a name="genericValueToFloat,TypeRef,GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">genericValueToFloat</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">tyRef</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">genVal</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cdouble</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGenericValueToFloat&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="genericValueToFloat"><a name="genericValueToFloat,TypeRef,GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">genericValueToFloat</span><span class="Other">(</span><span class="Identifier">tyRef</span><span class="Other">:</span> <span class="Identifier">TypeRef</span><span class="Other">;</span> <span class="Identifier">genVal</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cdouble</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGenericValueToFloat&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="disposeGenericValue"><a name="disposeGenericValue,GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">disposeGenericValue</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">genVal</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMDisposeGenericValue&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="disposeGenericValue"><a name="disposeGenericValue,GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">disposeGenericValue</span><span class="Other">(</span><span class="Identifier">genVal</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMDisposeGenericValue&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="createExecutionEngineForModule"><a name="createExecutionEngineForModule,ptr.ExecutionEngineRef,ModuleRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createExecutionEngineForModule</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">outEE</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> 
-                                     <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateExecutionEngineForModule&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createExecutionEngineForModule"><a name="createExecutionEngineForModule,ptr.ExecutionEngineRef,ModuleRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createExecutionEngineForModule</span><span class="Other">(</span><span class="Identifier">outEE</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
+                                    <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateExecutionEngineForModule&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="createInterpreterForModule"><a name="createInterpreterForModule,ptr.ExecutionEngineRef,ModuleRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createInterpreterForModule</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">outInterp</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> 
-                                 <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateInterpreterForModule&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createInterpreterForModule"><a name="createInterpreterForModule,ptr.ExecutionEngineRef,ModuleRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createInterpreterForModule</span><span class="Other">(</span><span class="Identifier">outInterp</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
+                                <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateInterpreterForModule&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="createJITCompilerForModule"><a name="createJITCompilerForModule,ptr.ExecutionEngineRef,ModuleRef,cuint,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createJITCompilerForModule</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">outJIT</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
-                                 <span class="Identifier">optLevel</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateJITCompilerForModule&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createJITCompilerForModule"><a name="createJITCompilerForModule,ptr.ExecutionEngineRef,ModuleRef,cuint,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createJITCompilerForModule</span><span class="Other">(</span><span class="Identifier">outJIT</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
+                                <span class="Identifier">optLevel</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateJITCompilerForModule&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="initializeMCJITCompilerOptions"><a name="initializeMCJITCompilerOptions,ptr.MCJITCompilerOptions,csize"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initializeMCJITCompilerOptions</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">options</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">MCJITCompilerOptions</span><span class="Other">;</span> 
-                                     <span class="Identifier">sizeOfOptions</span><span class="Other">:</span> <span class="Identifier">csize</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMInitializeMCJITCompilerOptions&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="initializeMCJITCompilerOptions"><a name="initializeMCJITCompilerOptions,ptr.MCJITCompilerOptions,csize"></a><pre><span class="Keyword">proc</span> <span class="Identifier">initializeMCJITCompilerOptions</span><span class="Other">(</span><span class="Identifier">options</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">MCJITCompilerOptions</span><span class="Other">;</span> 
+                                    <span class="Identifier">sizeOfOptions</span><span class="Other">:</span> <span class="Identifier">csize</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMInitializeMCJITCompilerOptions&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="createMCJITCompilerForModule"><a name="createMCJITCompilerForModule,ptr.ExecutionEngineRef,ModuleRef,ptr.MCJITCompilerOptions,csize,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createMCJITCompilerForModule</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">outJIT</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
-                                   <span class="Identifier">options</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">MCJITCompilerOptions</span><span class="Other">;</span> 
-                                   <span class="Identifier">sizeOfOptions</span><span class="Other">:</span> <span class="Identifier">csize</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateMCJITCompilerForModule&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createMCJITCompilerForModule"><a name="createMCJITCompilerForModule,ptr.ExecutionEngineRef,ModuleRef,ptr.MCJITCompilerOptions,csize,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createMCJITCompilerForModule</span><span class="Other">(</span><span class="Identifier">outJIT</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
+                                  <span class="Identifier">options</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">MCJITCompilerOptions</span><span class="Other">;</span> 
+                                  <span class="Identifier">sizeOfOptions</span><span class="Other">:</span> <span class="Identifier">csize</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateMCJITCompilerForModule&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>Create an MCJIT execution engine for a module, with the given options. It is the responsibility of the caller to ensure that all fields in Options up to the given SizeOfOptions are initialized. It is correct to pass a smaller value of SizeOfOptions that omits some fields. The canonical way of using this is:</p>
 <p>LLVMMCJITCompilerOptions options; LLVMInitializeMCJITCompilerOptions(&amp;options, sizeof(options)); ... fill in those options you care about</p>
@@ -1459,133 +1460,132 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 
 
 </dd>
-<dt id="createExecutionEngine"><a name="createExecutionEngine,ptr.ExecutionEngineRef,ModuleProviderRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createExecutionEngine</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">outEE</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> 
-                            <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">deprecated</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateExecutionEngine&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createExecutionEngine"><a name="createExecutionEngine,ptr.ExecutionEngineRef,ModuleProviderRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createExecutionEngine</span><span class="Other">(</span><span class="Identifier">outEE</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">;</span> 
+                           <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span><span class="Identifier">deprecated</span><span class="Other">,</span> 
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateExecutionEngine&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Deprecated: Use LLVMCreateExecutionEngineForModule instead.
 
 </dd>
-<dt id="createInterpreter"><a name="createInterpreter,ptr.ExecutionEngineRef,ModuleProviderRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createInterpreter</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">outInterp</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> 
-                        <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">deprecated</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateInterpreter&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createInterpreter"><a name="createInterpreter,ptr.ExecutionEngineRef,ModuleProviderRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createInterpreter</span><span class="Other">(</span><span class="Identifier">outInterp</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">;</span> 
+                       <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span><span class="Identifier">deprecated</span><span class="Other">,</span> 
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateInterpreter&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Deprecated: Use LLVMCreateInterpreterForModule instead.
 
 </dd>
-<dt id="createJITCompiler"><a name="createJITCompiler,ptr.ExecutionEngineRef,ModuleProviderRef,cuint,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createJITCompiler</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">outJIT</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">;</span> 
-                        <span class="Identifier">optLevel</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">deprecated</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateJITCompiler&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="createJITCompiler"><a name="createJITCompiler,ptr.ExecutionEngineRef,ModuleProviderRef,cuint,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createJITCompiler</span><span class="Other">(</span><span class="Identifier">outJIT</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">;</span> 
+                       <span class="Identifier">optLevel</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">deprecated</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateJITCompiler&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Deprecated: Use LLVMCreateJITCompilerForModule instead.
 
 </dd>
-<dt id="disposeExecutionEngine"><a name="disposeExecutionEngine,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">disposeExecutionEngine</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMDisposeExecutionEngine&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="disposeExecutionEngine"><a name="disposeExecutionEngine,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">disposeExecutionEngine</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMDisposeExecutionEngine&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="runStaticConstructors"><a name="runStaticConstructors,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">runStaticConstructors</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRunStaticConstructors&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="runStaticConstructors"><a name="runStaticConstructors,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">runStaticConstructors</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRunStaticConstructors&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="runStaticDestructors"><a name="runStaticDestructors,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">runStaticDestructors</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRunStaticDestructors&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="runStaticDestructors"><a name="runStaticDestructors,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">runStaticDestructors</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRunStaticDestructors&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="runFunctionAsMain"><a name="runFunctionAsMain,ExecutionEngineRef,ValueRef,cuint,cstringArray,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">runFunctionAsMain</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">;</span> <span class="Identifier">argC</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> 
-                        <span class="Identifier">argV</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">;</span> <span class="Identifier">envP</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRunFunctionAsMain&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="runFunctionAsMain"><a name="runFunctionAsMain,ExecutionEngineRef,ValueRef,cuint,cstringArray,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">runFunctionAsMain</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">;</span> <span class="Identifier">argC</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> 
+                       <span class="Identifier">argV</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">;</span> <span class="Identifier">envP</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRunFunctionAsMain&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="runFunction"><a name="runFunction,ExecutionEngineRef,ValueRef,cuint,ptr.GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">runFunction</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">;</span> <span class="Identifier">numArgs</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> 
-                  <span class="Identifier">args</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRunFunction&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="runFunction"><a name="runFunction,ExecutionEngineRef,ValueRef,cuint,ptr.GenericValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">runFunction</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">;</span> <span class="Identifier">numArgs</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> 
+                 <span class="Identifier">args</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">GenericValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">GenericValueRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRunFunction&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="freeMachineCodeForFunction"><a name="freeMachineCodeForFunction,ExecutionEngineRef,ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">freeMachineCodeForFunction</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMFreeMachineCodeForFunction&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="freeMachineCodeForFunction"><a name="freeMachineCodeForFunction,ExecutionEngineRef,ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">freeMachineCodeForFunction</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMFreeMachineCodeForFunction&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="addModule"><a name="addModule,ExecutionEngineRef,ModuleRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addModule</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMAddModule&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="addModule"><a name="addModule,ExecutionEngineRef,ModuleRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addModule</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMAddModule&quot;</span><span class="Other">,</span> 
+    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="addModuleProvider"><a name="addModuleProvider,ExecutionEngineRef,ModuleProviderRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addModuleProvider</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMAddModuleProvider&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="addModuleProvider"><a name="addModuleProvider,ExecutionEngineRef,ModuleProviderRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addModuleProvider</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMAddModuleProvider&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Deprecated: Use LLVMAddModule instead.
 
 </dd>
-<dt id="removeModule"><a name="removeModule,ExecutionEngineRef,ModuleRef,ptr.ModuleRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">removeModule</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> <span class="Identifier">outMod</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
-                   <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRemoveModule&quot;</span><span class="Other">,</span> 
-    <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="removeModule"><a name="removeModule,ExecutionEngineRef,ModuleRef,ptr.ModuleRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">removeModule</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">m</span><span class="Other">:</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> <span class="Identifier">outMod</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> 
+                  <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRemoveModule&quot;</span><span class="Other">,</span> 
+    <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="removeModuleProvider"><a name="removeModuleProvider,ExecutionEngineRef,ModuleProviderRef,ptr.ModuleRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">removeModuleProvider</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">;</span> 
-                           <span class="Identifier">outMod</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">deprecated</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRemoveModuleProvider&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="removeModuleProvider"><a name="removeModuleProvider,ExecutionEngineRef,ModuleProviderRef,ptr.ModuleRef,cstringArray"></a><pre><span class="Keyword">proc</span> <span class="Identifier">removeModuleProvider</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">mp</span><span class="Other">:</span> <span class="Identifier">ModuleProviderRef</span><span class="Other">;</span> 
+                          <span class="Identifier">outMod</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ModuleRef</span><span class="Other">;</span> <span class="Identifier">outError</span><span class="Other">:</span> <span class="Identifier">cstringArray</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">deprecated</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRemoveModuleProvider&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 Deprecated: Use LLVMRemoveModule instead.
 
 </dd>
-<dt id="findFunction"><a name="findFunction,ExecutionEngineRef,cstring,ptr.ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">findFunction</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">outFn</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMFindFunction&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="findFunction"><a name="findFunction,ExecutionEngineRef,cstring,ptr.ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">findFunction</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">name</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">outFn</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">ValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Bool</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMFindFunction&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="recompileAndRelinkFunction"><a name="recompileAndRelinkFunction,ExecutionEngineRef,ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">recompileAndRelinkFunction</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">fn</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRecompileAndRelinkFunction&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="recompileAndRelinkFunction"><a name="recompileAndRelinkFunction,ExecutionEngineRef,ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">recompileAndRelinkFunction</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">fn</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMRecompileAndRelinkFunction&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="getExecutionEngineTargetData"><a name="getExecutionEngineTargetData,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getExecutionEngineTargetData</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetDataRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetExecutionEngineTargetData&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getExecutionEngineTargetData"><a name="getExecutionEngineTargetData,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getExecutionEngineTargetData</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetDataRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetExecutionEngineTargetData&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="getExecutionEngineTargetMachine"><a name="getExecutionEngineTargetMachine,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getExecutionEngineTargetMachine</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetExecutionEngineTargetMachine&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getExecutionEngineTargetMachine"><a name="getExecutionEngineTargetMachine,ExecutionEngineRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getExecutionEngineTargetMachine</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">TargetMachineRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetExecutionEngineTargetMachine&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="addGlobalMapping"><a name="addGlobalMapping,ExecutionEngineRef,ValueRef,pointer"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addGlobalMapping</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">global</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">;</span> 
-                       <span class="Identifier">address</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMAddGlobalMapping&quot;</span><span class="Other">,</span> 
-    <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="addGlobalMapping"><a name="addGlobalMapping,ExecutionEngineRef,ValueRef,pointer"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addGlobalMapping</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">global</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">;</span> <span class="Identifier">address</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMAddGlobalMapping&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="getPointerToGlobal"><a name="getPointerToGlobal,ExecutionEngineRef,ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getPointerToGlobal</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">global</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetPointerToGlobal&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="getPointerToGlobal"><a name="getPointerToGlobal,ExecutionEngineRef,ValueRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">getPointerToGlobal</span><span class="Other">(</span><span class="Identifier">ee</span><span class="Other">:</span> <span class="Identifier">ExecutionEngineRef</span><span class="Other">;</span> <span class="Identifier">global</span><span class="Other">:</span> <span class="Identifier">ValueRef</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMGetPointerToGlobal&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
 </dd>
-<dt id="createSimpleMCJITMemoryManager"><a name="createSimpleMCJITMemoryManager,pointer,MemoryManagerAllocateCodeSectionCallback,MemoryManagerAllocateDataSectionCallback,MemoryManagerFinalizeMemoryCallback,MemoryManagerDestroyCallback"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSimpleMCJITMemoryManager</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">allocateCodeSection</span><span class="Other">:</span> <span class="Identifier">MemoryManagerAllocateCodeSectionCallback</span><span class="Other">;</span> 
+<dt id="createSimpleMCJITMemoryManager"><a name="createSimpleMCJITMemoryManager,pointer,MemoryManagerAllocateCodeSectionCallback,MemoryManagerAllocateDataSectionCallback,MemoryManagerFinalizeMemoryCallback,MemoryManagerDestroyCallback"></a><pre><span class="Keyword">proc</span> <span class="Identifier">createSimpleMCJITMemoryManager</span><span class="Other">(</span><span class="Identifier">opaque</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">allocateCodeSection</span><span class="Other">:</span> <span class="Identifier">MemoryManagerAllocateCodeSectionCallback</span><span class="Other">;</span> 
     <span class="Identifier">allocateDataSection</span><span class="Other">:</span> <span class="Identifier">MemoryManagerAllocateDataSectionCallback</span><span class="Other">;</span> 
     <span class="Identifier">finalizeMemory</span><span class="Other">:</span> <span class="Identifier">MemoryManagerFinalizeMemoryCallback</span><span class="Other">;</span> 
-                                     <span class="Identifier">destroy</span><span class="Other">:</span> <span class="Identifier">MemoryManagerDestroyCallback</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">MCJITMemoryManagerRef</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateSimpleMCJITMemoryManager&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+                                    <span class="Identifier">destroy</span><span class="Other">:</span> <span class="Identifier">MemoryManagerDestroyCallback</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">MCJITMemoryManagerRef</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMCreateSimpleMCJITMemoryManager&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>Create a simple custom MCJIT memory manager. This memory manager can intercept allocations in a module-oblivious way. This will return NULL if any of the passed functions are NULL.</p>
 <p>@param Opaque An opaque client object to pass back to the callbacks. @param AllocateCodeSection Allocate a block of memory for executable code. @param AllocateDataSection Allocate a block of memory for data.</p>
@@ -1595,8 +1595,8 @@ Deprecated: Use LLVMRemoveModule instead.
 
 
 </dd>
-<dt id="disposeMCJITMemoryManager"><a name="disposeMCJITMemoryManager,MCJITMemoryManagerRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">disposeMCJITMemoryManager</span><span class="Operator">*</span><span class="Other">(</span><span class="Identifier">mm</span><span class="Other">:</span> <span class="Identifier">MCJITMemoryManagerRef</span><span class="Other">)</span> <span class="Other">{.</span>
-    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMDisposeMCJITMemoryManager&quot;</span><span class="Other">,</span> <span class="Identifier">libllvm</span><span class="Other">.}</span></pre></dt>
+<dt id="disposeMCJITMemoryManager"><a name="disposeMCJITMemoryManager,MCJITMemoryManagerRef"></a><pre><span class="Keyword">proc</span> <span class="Identifier">disposeMCJITMemoryManager</span><span class="Other">(</span><span class="Identifier">mm</span><span class="Other">:</span> <span class="Identifier">MCJITMemoryManagerRef</span><span class="Other">)</span> <span class="Other">{.</span>
+    <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;LLVMDisposeMCJITMemoryManager&quot;</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">dynlib</span><span class="Other">:</span> <span class="Identifier">dllname</span><span class="Other">.}</span></pre></dt>
 <dd>
 
 
@@ -1611,7 +1611,7 @@ Deprecated: Use LLVMRemoveModule instead.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-05-05 18:58:07 UTC</small>
+        <small>Made with Nim. Generated: 2015-05-06 18:35:52 UTC</small>
       </div>
     </div>
   </div>
