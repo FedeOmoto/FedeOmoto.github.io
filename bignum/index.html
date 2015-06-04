@@ -1246,6 +1246,26 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="`-`[](x: Int; y: int | culong | Int): Int"><wbr />`-`</a></li>
   <li><a class="reference" href="#-,,Int"
     title="`-`[](x: int | culong; y: Int): Int"><wbr />`-`</a></li>
+  <li><a class="reference" href="#addMul,Int,Int,Int"
+    title="addMul(z, x, y: Int): Int"><wbr />add<wbr />Mul</a></li>
+  <li><a class="reference" href="#addMul,Int,Int,culong"
+    title="addMul(z, x: Int; y: culong): Int"><wbr />add<wbr />Mul</a></li>
+  <li><a class="reference" href="#addMul,Int,Int,int_2"
+    title="addMul(z, x: Int; y: int): Int"><wbr />add<wbr />Mul</a></li>
+  <li><a class="reference" href="#addMul,Int,,Int"
+    title="addMul[](z: Int; x: int | culong; y: Int): Int"><wbr />add<wbr />Mul</a></li>
+  <li><a class="reference" href="#addMul,Int,,"
+    title="addMul[](z: Int; x: int | culong; y: int | culong): Int"><wbr />add<wbr />Mul</a></li>
+  <li><a class="reference" href="#subMul,Int,Int,Int"
+    title="subMul(z, x, y: Int): Int"><wbr />sub<wbr />Mul</a></li>
+  <li><a class="reference" href="#subMul,Int,Int,culong"
+    title="subMul(z, x: Int; y: culong): Int"><wbr />sub<wbr />Mul</a></li>
+  <li><a class="reference" href="#subMul,Int,Int,int_2"
+    title="subMul(z, x: Int; y: int): Int"><wbr />sub<wbr />Mul</a></li>
+  <li><a class="reference" href="#subMul,Int,,Int"
+    title="subMul[](z: Int; x: int | culong; y: Int): Int"><wbr />sub<wbr />Mul</a></li>
+  <li><a class="reference" href="#subMul,Int,,"
+    title="subMul[](z: Int; x: int | culong; y: int | culong): Int"><wbr />sub<wbr />Mul</a></li>
   <li><a class="reference" href="#inc,Int,"
     title="inc[](z: Int; x: int | culong | Int)"><wbr />inc</a></li>
   <li><a class="reference" href="#dec,Int,"
@@ -1540,10 +1560,10 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
     title="num(x: Rat): Int"><wbr />num</a></li>
   <li><a class="reference" href="#denom,Rat"
     title="denom(x: Rat): Int"><wbr />denom</a></li>
-  <li><a class="reference" href="#setNum,Int,"
-    title="setNum[](z: Int; x: int | culong | Int): Rat"><wbr />set<wbr />Num</a></li>
-  <li><a class="reference" href="#setDenom,Int,"
-    title="setDenom[](z: Int; x: int | culong | Int): Rat"><wbr />set<wbr />Denom</a></li>
+  <li><a class="reference" href="#setNum,Rat,"
+    title="setNum[](z: Rat; x: int | culong | Int): Rat"><wbr />set<wbr />Num</a></li>
+  <li><a class="reference" href="#setDenom,Rat,"
+    title="setDenom[](z: Rat; x: int | culong | Int): Rat"><wbr />set<wbr />Denom</a></li>
   <li><a class="reference" href="#set,Rat,Rat"
     title="set(z: Rat; x: Rat): Rat"><wbr />set</a></li>
   <li><a class="reference" href="#set,Rat,float"
@@ -1942,6 +1962,56 @@ Returns the difference x-y.
 <dt id="-"><a name="-,,Int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`-`</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span></pre></dt>
 <dd>
 Returns the difference x-y.
+
+</dd>
+<dt id="addMul"><a name="addMul,Int,Int,Int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addMul</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">,</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dd>
+Increments <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="addMul"><a name="addMul,Int,Int,culong"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addMul</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">,</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">culong</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dd>
+Increments <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="addMul"><a name="addMul,Int,Int,int_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addMul</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">,</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dd>
+Increments <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="addMul"><a name="addMul,Int,,Int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addMul</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span></pre></dt>
+<dd>
+Increments <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="addMul"><a name="addMul,Int,,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">addMul</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span></pre></dt>
+<dd>
+Increments <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="subMul"><a name="subMul,Int,Int,Int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">subMul</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">,</span> <span class="Identifier">x</span><span class="Other">,</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dd>
+Decrements <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="subMul"><a name="subMul,Int,Int,culong"></a><pre><span class="Keyword">proc</span> <span class="Identifier">subMul</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">,</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">culong</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dd>
+Decrements <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="subMul"><a name="subMul,Int,Int,int_2"></a><pre><span class="Keyword">proc</span> <span class="Identifier">subMul</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">,</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dd>
+Decrements <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="subMul"><a name="subMul,Int,,Int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">subMul</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span></pre></dt>
+<dd>
+Decrements <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
+
+</dd>
+<dt id="subMul"><a name="subMul,Int,,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">subMul</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span><span class="Other">;</span> <span class="Identifier">y</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Int</span></pre></dt>
+<dd>
+Increments <cite>z</cite> by <cite>x</cite> times <cite>y</cite>.
 
 </dd>
 <dt id="inc"><a name="inc,Int,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">inc</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span> <span class="Operator">|</span> <span class="Identifier">Int</span><span class="Other">)</span></pre></dt>
@@ -2619,7 +2689,7 @@ Creates a new Rat and set it to 0/1.
 </dd>
 <dt id="newRat"><a name="newRat,float"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newRat</span><span class="Other">(</span><span class="Identifier">f</span><span class="Other">:</span> <span class="Identifier">float</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Rat</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">RootEffect</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
-Creates a new Rat and set it to 0/1.
+Creates a new Rat and set it to the value of <cite>f</cite>. There is no rounding, this conversion is exact.
 
 </dd>
 <dt id="newRat"><a name="newRat,Int,Int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">newRat</span><span class="Other">(</span><span class="Identifier">a</span><span class="Other">,</span> <span class="Identifier">b</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Rat</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">DivByZeroError</span><span class="Other">,</span> <span class="Identifier">Exception</span><span class="Other">]</span><span class="Other">,</span> 
@@ -2707,12 +2777,12 @@ Returns the numerator of <cite>x</cite>.
 Returns the denominator of <cite>x</cite>.
 
 </dd>
-<dt id="setNum"><a name="setNum,Int,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">setNum</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span> <span class="Operator">|</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Rat</span></pre></dt>
+<dt id="setNum"><a name="setNum,Rat,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">setNum</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Rat</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span> <span class="Operator">|</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Rat</span></pre></dt>
 <dd>
 Sets the numerator of <cite>z</cite> to <cite>x</cite> and returns <cite>z</cite>.
 
 </dd>
-<dt id="setDenom"><a name="setDenom,Int,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">setDenom</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Int</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span> <span class="Operator">|</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Rat</span></pre></dt>
+<dt id="setDenom"><a name="setDenom,Rat,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">setDenom</span><span class="Other">[</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">z</span><span class="Other">:</span> <span class="Identifier">Rat</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Operator">|</span> <span class="Identifier">culong</span> <span class="Operator">|</span> <span class="Identifier">Int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">Rat</span></pre></dt>
 <dd>
 Sets the denominator of <cite>z</cite> to <cite>x</cite> and returns <cite>z</cite>.
 
@@ -3136,7 +3206,7 @@ An alias for <cite>countup</cite>.
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small>Made with Nim. Generated: 2015-06-03 19:22:25 UTC</small>
+        <small>Made with Nim. Generated: 2015-06-04 20:28:02 UTC</small>
       </div>
     </div>
   </div>
